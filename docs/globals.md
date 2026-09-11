@@ -323,13 +323,13 @@ Below are all the main tables Epiphany holds that a modder may need to access, t
 
 	|Variable Name|Possible values|Description|
 	|:--|:--|:--|
-	|Name| Used for the DSS achievement viewer|
-	|SortOrder| Used for DSS achievement viewer|
-	|ID|integer|Challenge ID|
-	|Character|string|Name of the character that starts in this challenge in all caps. Used to associate the challenge unlock with a character unlock|
-	|UnlockReq|string|The name of something else to be unlocked to unlock the challenge. Used for the DSS achievement viewer, currently exclusively unlocked with tarnished characters|
+	|Name|Used for DSS achievement viewer.|
+	|SortOrder|Used for DSS achievement viewer.|
+	|ID|integer|Challenge ID.|
+	|Character|string|Name of the character that starts in this challenge in all caps. Used to associate the challenge unlock with a character unlock.|
+	|UnlockReq|string|The name of something else to be unlocked to unlock the challenge. Used for the DSS achievement viewer, currently exclusively unlocked with tarnished characters.|
 	|Unlock|string|Name of the achievement unlocked by beating the challenge|
-	|func|function|Function that passes the player. Called during [MC_PLAYER_INIT_POST_LEVEL_INIT_STATS](https://repentogon.com/enums/ModCallbacks.html#mc_player_init_post_level_init_stats) during the respective challenge|
+	|func|function|Function that passes the player. Called during [MC_PLAYER_INIT_POST_LEVEL_INIT_STATS](https://repentogon.com/enums/ModCallbacks.html#mc_player_init_post_level_init_stats) during the respective challenge.|
 
 - DEALMAKER
 - DONDE_ESTA_LA_BIBLIOTECA

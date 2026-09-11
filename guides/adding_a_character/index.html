@@ -1,0 +1,1749 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../classes/ThrownBagData/">
+      
+      
+        <link rel="next" href="../golden_items/">
+      
+      
+      <link rel="icon" href="../../img/epiphany_favicon.ico">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Adding a Character - Epiphany API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-your-character" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Epiphany API Docs" class="md-header__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Epiphany API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adding a Character
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../globals/" class="md-tabs__link">
+          
+  
+  Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Epiphany API Docs" class="md-nav__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    Epiphany API Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mod Global
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Enums
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Enums
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.BagGFXPriority/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagGFXPriority
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.BagSynergyFlags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSynergyFlags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.CardGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CardGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.HeartGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HeartGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.SlotGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlotGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.CrimsonWispMaturity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispMaturity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.CrimsonWispType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.ExtraCallbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtraCallbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.RoomClearType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RoomClearType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagMetaData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagMetaData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagsInfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagsInfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BurstParamsConfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BurstParamsConfig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ImpactBurstParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ImpactBurstParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/SwingingBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SwingingBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ThrownBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ThrownBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Adding a Character
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Adding a Character
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up your character
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up your character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Character entry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-foldermenu-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content folder/Menu assets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional additions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional additions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#item-specific-hair-costumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Item-specific hair costumes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-collectibles-and-trinkets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding collectibles and trinkets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registering-the-tarnished" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registering the tarnished
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mod-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mod Download
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../golden_items/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Golden items
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_pools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item pools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu_music/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Menu music
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minor_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minor compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample_bombs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample bombs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../throwing_bag_synergies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Throwing Bag
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turnover_shops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Turnover shops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up your character
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up your character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Character entry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-foldermenu-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content folder/Menu assets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional additions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional additions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#item-specific-hair-costumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Item-specific hair costumes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-collectibles-and-trinkets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding collectibles and trinkets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registering-the-tarnished" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registering the tarnished
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mod-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mod Download
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Adding a Character</h1>
+
+<p>In addition to the work-in-progress set of tarnished characters for the vanilla cast, Epiphany supports adding tarnished versions of modded characters. This guide covers everything you'd need to know about adding and configuring your own tarnished character.</p>
+<details class="- info">
+<summary>Converting an old Tarnished</summary>
+<p>Reading this guide to update a custom Tarnished character made before Wave 8? Here's a quickstart list of what to update:</p>
+<p><strong>Required</strong>:</p>
+<ul>
+<li>Required achievement in <code>achievements.xml</code> named <code>"HIDE_MENU_[CHAR_NAME]"</code>, where <code>[CHAR_NAME]</code> (without brackets) is the name of your Tarnished entered into the Epiphany API.</li>
+<li>Use <code>hideachievement</code> instead of <code>hidden</code> in your <code>players.xml</code> for your tarnished, setting it equal to your new HIDE_MENU achievement.</li>
+<li>New color palette for tarnished characters, and a normal "grey" version of the portrait. The grey one is assigned to your content folder's characterportraits.xml, the red to your tarnished menu anm2.</li>
+<li>Add <code>taintedID</code> to your table in <code>Epiphany.API.AddCharacter</code> and set it equal to the tainted character ID that your character should be sorted under.</li>
+</ul>
+<p><strong>Optional:</strong></p>
+<ul>
+<li>Hit sounds, death sounds, starting stats, pocket actives, starting health, and character costume can all be defined in <a href="https://repentogon.com/xml/players.html">players.xml</a>.</li>
+<li>New attributes to <code>Epiphany.API.AddCharacter</code>: <code>blockedItems</code>, <code>blockedTrinkets</code>, <code>hairCostumeItems</code>, <code>hairCostumeNulls</code>, <code>bloodTears</code>, <code>nullStats</code>. See <a href="#registering-the-tarnished">this section</a> for more information.</li>
+<li>To ensure your tarnished only applies to Epiphany Wave 8 and up, you can require a version check on top of the global check before you add your tarnished, being: <code>Epiphany and tonumber(Epiphany.WAVE_NUMBER) &gt;= 8</code>.</li>
+</ul>
+</details>
+<h2 id="setting-up-your-character">Setting up your character<a class="headerlink" href="#setting-up-your-character" title="Permanent link">⚓︎</a></h2>
+<p>This guide assumes you know how to create a modded character to begin with. If for some reason you don't, see <a href="https://isaacblueprints.com/tutorials/crash_course/character/">this page on Isaac Blueprints</a>. Setting up your character entry should be identical to making a normal modded character. For this guide, we will be creating a tarnished version of a character named "?".</p>
+<p>Before Wave 8, you could create a tarnished character on its lonesome without the requirement of a normal or tainted version. With the implementation of tarnished characters directly on the main menu, it overrides an existing character on the menu. As such, <strong>you must have at least one other character entry to add a tarnished character</strong>. This may change in the future, but for now you need a character that will show up on the main menu at all times.</p>
+<h3 id="achievements">Achievements<a class="headerlink" href="#achievements" title="Permanent link">⚓︎</a></h3>
+<p>Due to how tarnished characters are implemented to be accessible from the main menu, <strong>you must add at least one achievement tied to your character</strong>, regardless of intention. This is so that your character can be hidden from the main menu but accessible in the co-op menu. In most cases, however, you will want to make your tarnished unlockable, and you will require two achievements. For the purposes of the guide, we will be making Tarnished Guppy unlockable.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;achievements</span><span class="w"> </span><span class="na">gfxroot=</span><span class="s">&quot;gfx/ui/achievement/&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- This is what the player will actually see when you unlock the tarnished. --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Epiphany uses `tarnished_achpaper.png` for its achievements. You do not need to make a copy of the image inside your mod to use it. --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;achievement</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CHARACTER_?&quot;</span><span class="w"> </span><span class="na">text=</span><span class="s">&#39;You unlocked &quot;?&quot;&#39;</span><span class="w"> </span><span class="na">gfx=</span><span class="s">&quot;tarnished_achievement_character_technical.png&quot;</span><span class="w"> </span><span class="na">gfxback=</span><span class="s">&quot;tarnished_achpaper.png&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- The menu achievement must be &quot;HIDE_MENU_&quot; followed by the name of your character entered into the Epiphany API. You must have this achievement for your character whether or not it is unlockable. --&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!-- Be sure to add the hidden attribute as this isn&#39;t an achievement meant to be seen by the player. --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;achievement</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HIDE_MENU_?&quot;</span><span class="w"> </span><span class="na">hidden=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/achievements&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="character-entry">Character entry<a class="headerlink" href="#character-entry" title="Permanent link">⚓︎</a></h3>
+<p>Inside the players.xml, your character will be setup like a regular non-tainted character. Majority of things your character starts out with can be managed here thanks to REPENTOGON, the main highlights being a costume, pocket active, and basic stats. See <a href="https://repentogon.com/xml/players.html">here</a> for a full list of variables.</p>
+<p>Following the pattern of tainteds, you may want to name your tarnished the same as its regular variant. To prevent name clashing, the unicode symbol <code>U+200B</code>, or "ZERO WIDTH SPACE", is used as a unique identifier without compromising the name of the character. Add this character to the start of your tarnished's name. It can be copied from <a href="https://unicode-explorer.com/c/200B">here</a>. This is not necessary if your tarnished uses a unique name.</p>
+<p>Lastly, preventing your character from showing up on the menu as a regular character entry is done using the <code>hideachievement</code> attribute. Assign the HIDE_MENU achievement here.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;players</span><span class="w"> </span><span class="na">root=</span><span class="s">&quot;gfx/characters/costumes/&quot;</span><span class="w"> </span><span class="na">portraitroot=</span><span class="s">&quot;gfx/ui/stage/&quot;</span><span class="w"> </span><span class="na">nameimageroot=</span><span class="s">&quot;gfx/ui/boss/&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;player</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;?&quot;</span>
+<span class="w">        </span><span class="na">birthright=</span><span class="s">&quot;???&quot;</span><span class="w"> </span><span class="na">skin=</span><span class="s">&quot;character_technical.png&quot;</span><span class="w"> </span><span class="na">bonehearts=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">items=</span><span class="s">&quot;249&quot;</span>
+<span class="w">        </span><span class="na">nameimage=</span><span class="s">&quot;playername_technical.png&quot;</span>
+<span class="w">        </span><span class="na">portrait=</span><span class="s">&quot;playerportrait_technical.png&quot;</span>
+<span class="w">        </span><span class="na">skinColor=</span><span class="s">&quot;6&quot;</span>
+<span class="w">    </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;player</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;?&quot;</span><span class="w"> </span><span class="na">bSkinParent=</span><span class="s">&quot;?&quot;</span>
+<span class="w">        </span><span class="na">birthright=</span><span class="s">&quot;???&quot;</span><span class="w"> </span><span class="na">skin=</span><span class="s">&quot;character_technical_b.png&quot;</span><span class="w"> </span><span class="na">soulhearts=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">goldenhearts=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">items=</span><span class="s">&quot;414&quot;</span>
+<span class="w">        </span><span class="na">nameimage=</span><span class="s">&quot;playername_technical.png&quot;</span>
+<span class="w">        </span><span class="na">portrait=</span><span class="s">&quot;playerportrait_technical_b.png&quot;</span>
+<span class="w">        </span><span class="na">skinColor=</span><span class="s">&quot;6&quot;</span>
+<span class="w">    </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;player</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;​?&quot;</span><span class="w"> </span><span class="na">hideachievement=</span><span class="s">&quot;HIDE_MENU_?&quot;</span>
+<span class="w">        </span><span class="na">birthright=</span><span class="s">&quot;???&quot;</span><span class="w"> </span><span class="na">skin=</span><span class="s">&quot;character_technical_c.png&quot;</span><span class="w"> </span><span class="na">hp=</span><span class="s">&quot;6&quot;</span>
+<span class="w">        </span><span class="na">nameimage=</span><span class="s">&quot;playername_technical.png&quot;</span>
+<span class="w">        </span><span class="na">portrait=</span><span class="s">&quot;playerportrait_technical_c.png&quot;</span>
+<span class="w">        </span><span class="na">skinColor=</span><span class="s">&quot;6&quot;</span>
+<span class="w">    </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/players&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="content-foldermenu-assets">Content folder/Menu assets<a class="headerlink" href="#content-foldermenu-assets" title="Permanent link">⚓︎</a></h3>
+<p>Inside your mod's content folder, the following anm2s should be used by your tarnished:</p>
+<ul>
+<li>characterportraits.anm2 (For the continue widget; character menu handled separately by Epihany)</li>
+<li>controls.anm2 (Create an animation, but only create a blank frame. Displaying controls for tarnisheds is handled separately by Epiphany)</li>
+<li>coop menu.anm2</li>
+<li>death screen.anm2</li>
+</ul>
+<p>charactermenu.anm2 is unused, as Epiphany handles rendering menu contents manually. A separate anm2 is required for this that is added through the Epiphany API, which must have the following animations:</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Layers and spritesheets are not relevant to the anm2 setup; just the animations.</p>
+</details>
+<ul>
+<li>"Portrait": The character's menu portrait while unlocked.</li>
+<li>"Text": The character's menu text. This includes name, arrows, stats, etc. First frame is what will be displayed while the tarnished is locked, second frame while unlocked.</li>
+<li>"Door": The character's menu portrait while locked.</li>
+</ul>
+<p><img alt="Tarnished menu anm2" src="../../assets/adding_a_character/tarnished_menu_anm2.png" /></p>
+<p>Unlike the vanilla charactermenu.anm2, Epiphany's menu has all sprites pivoted in the center of the animation instead of offset to the bottom right corner. The tarnished menu then applies an offset of X: 239, Y: 141 to place the text in the correct position. If your tarnished's menu text is setup similarly, apply a reverse offset of X: -239, Y: -141 to the animation's root frame.</p>
+<h2 id="optional-additions">Optional additions<a class="headerlink" href="#optional-additions" title="Permanent link">⚓︎</a></h2>
+<p>Not required by the Epiphany API, this section covers optional additions to your tarnished that warrant more detail.</p>
+<h3 id="item-specific-hair-costumes">Item-specific hair costumes<a class="headerlink" href="#item-specific-hair-costumes" title="Permanent link">⚓︎</a></h3>
+<p>As of Wave 8, a system was created to allow for custom variants of a tarnished's hair costume depending on the currently active head costume from an item or null item. A lot of automation is in place to handle the majority of work involved, but your tarnished must have the <code>modcostume</code> and <code>costumeSuffix</code> variables present in their <code>players.xml</code>.</p>
+<details class="- note">
+<summary>Head costumes only</summary>
+<p>This system only supports items that change the <code>head</code> layer, such as Brimstone, Ipecac, etc. An item that doesn't change that layer, such as Sad Onion, will have no effect.</p>
+</details>
+<p>When adding your tarnished through the Epiphany API, it can accept a table map of CollectibleType (or NullItemID) to strings, of which will be the filenames of the associated spritesheet inside your tarnished's costume suffix folder. See below for example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="kd">local</span> <span class="n">hairCostumeItems</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">--The full filepath would turn out to gfx/characters/costumes_characterSuffixHere/gross_ipecac_hair.png</span>
+        <span class="p">[</span><span class="n">CollectibleType</span><span class="p">.</span><span class="n">COLLECTIBLE_IPECAC</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;gross_ipecac_hair.png&quot;</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">COLLECTIBLE_MY_CUSTOM_ITEM</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;super_awesome_hair.png&quot;</span>
+    <span class="p">}</span>
+    <span class="kd">local</span> <span class="n">hairCostumeNulls</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">NullItemID</span><span class="p">.</span><span class="n">ID_GUPPY</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;furry_guppy_hair.png&quot;</span>
+    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="overriding-collectibles-and-trinkets">Overriding collectibles and trinkets<a class="headerlink" href="#overriding-collectibles-and-trinkets" title="Permanent link">⚓︎</a></h3>
+<p>REPENTOGON allows the ability to block certain collectibles and trinkets per-player, acting as if they don't have the item at all. This is desireable for tarnisheds that may want to create a unique synergy/interaction without any of the attributes of the item itself.</p>
+<p>Epiphany allows you to assign specific collectibles and trinkets to your tarnished that will always be blocked on only that tarnished. It will be unblocked when switching characters. The following functions can be used for convenience:</p>
+<ul>
+<li>Epiphany:HasBlockedCollectible(<code>EntityPlayer</code> player, <code>CollectibleType</code> item)</li>
+<li>Epiphany:GetBlockedCollectibleNum(<code>EntityPlayer</code> player, <code>CollectibleType</code> item)</li>
+<li>Epiphany:HasBlockedTrinket(<code>EntityPlayer</code> player, <code>TrinketType</code> trinket)</li>
+</ul>
+<h2 id="registering-the-tarnished">Registering the tarnished<a class="headerlink" href="#registering-the-tarnished" title="Permanent link">⚓︎</a></h2>
+<p>Adding your tarnished to Epiphany's API uses the following function:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">.</span><span class="n">API</span><span class="p">.</span><span class="n">AddCharacter</span><span class="p">(</span><span class="n">charInfo</span><span class="p">:</span> <span class="n">table</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<details class="info" open="open">
+<summary>Required variables</summary>
+<p><code>charName</code>, <code>charID</code>, <code>playerAnm2</code>, and <code>menuGraphics</code> are required variables. <code>taintedID</code> is not enforced, but is recommended. All other variables are optional</p>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable Name</th>
+<th style="text-align: left;">Possible Values</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">charName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of your tarnished. <strong>This is used as an important identifier</strong> outside of the tarnished's PlayerType. It must match the name used in the HIDE_MENU and CHARACTER achievement</td>
+</tr>
+<tr>
+<td style="text-align: left;">charID</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">PlayerType of your tarnished using <a href="https://wofsauge.github.io/IsaacDocs/rep/Isaac.html#getplayertypebyname">Isaac.GetPlayerTypeByName</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">playerAnm2</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Path to an anm2 file that your tarnished will use in place of the default player anm2. See Epiphany's own player anm2 files in <code>gfx/characters/</code> as a reference to copy from</td>
+</tr>
+<tr>
+<td style="text-align: left;">taintedID</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">PlayerType of the associated tainted using <a href="https://wofsauge.github.io/IsaacDocs/rep/Isaac.html#getplayertypebyname">Isaac.GetPlayerTypeByName</a>. <strong>If this variable is not provided</strong>, it will attempt to look for the first available tainted character from your mod. If found, your tarnished will be placed at that tainted's position on the character wheel. If no tainteds can be found, they will not be registered to the tarnished menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">menuGraphics</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">File path to the anm2 file that contains menu assets. See <a href="#content-foldermenu-assets">Menu sprites</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">unlockChecker</td>
+<td style="text-align: left;">function</td>
+<td style="text-align: left;">Doesn't pass any arguments. Return a <code>boolean</code> for whether or not the tarnished is unlocked</td>
+</tr>
+<tr>
+<td style="text-align: left;">floorTutorial</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Path to an anm2 file. Must have one animation named "Tutorial" that holds the character tutorial. Unlike vanilla, does not support dynamic input sprites, so it must display keys manually</td>
+</tr>
+<tr>
+<td style="text-align: left;">charStats</td>
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">Accepts (bool)<code>FLYING</code>, (TearFlags)<code>TEAR_FLAGS</code>, (Color)<code>TEAR_COLOR</code>, and (Color)<code>LASER_COLOR</code> as variables inside the table. More are available, but remain for backwards compatibility pre-Wave 8</td>
+</tr>
+<tr>
+<td style="text-align: left;">nullStats</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">ID for a null item obtained with <a href="https://repentogon.com/Isaac.html#getnullitemidbyname">Isaac.GetNullItemIdByName</a>. Use for applying flat/multiplicative tears/damage to your tarnished</td>
+</tr>
+<tr>
+<td style="text-align: left;">bloodTears</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Set to <code>true</code> to have your tarnished shoot blood variants of tears</td>
+</tr>
+<tr>
+<td style="text-align: left;">hairCostumeItems</td>
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">Map of CollectibleType to string containing a png filename. See <a href="#item-specific-hair-costumes">Item-specific hair costumes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">hairCostumeNulls</td>
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">Map of NullItemID to string containing a png filename. See <a href="#item-specific-hair-costumes">Item-specific hair costumes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">blockedItems</td>
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">Array of CollectibleType that will be blocked for the tarnished, acting as if they don't have the item. See <a href="#overriding-collectibles-and-trinkets">Overriding collectibles and trinkets</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">blockedTrinkets</td>
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">Array of TrinketType that will be blocked for the tarnished, acting as if they don't have the item. See <a href="#overriding-collectibles-and-trinkets">Overriding collectibles and trinkets</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Adding your tarnished must be done under a specific callback</strong> in order appear on the menu properly: <a href="https://repentogon.com/enums/ModCallbacks.html#mc_post_mods_loaded">MC_POST_MODS_LOADED</a>. REPENTOGON introduced this callback as a reliable way of applying patches for other mods without requiring a run be started. This is required here, since your character will be present on the menu before you start a run.</p>
+<p>See below for an example of how the patch would be applied:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">---@class ModReference</span>
+<span class="kd">local</span> <span class="n">Mod</span> <span class="o">=</span> <span class="n">RegisterMod</span><span class="p">(</span><span class="s2">&quot;Tarnished Example&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">--Your mod requires REPENTOGON. Stop errors from happening if the user doesn&#39;t have it installed.</span>
+<span class="kr">if</span> <span class="ow">not</span> <span class="n">REPENTOGON</span> <span class="kr">then</span>
+    <span class="kr">return</span>
+<span class="kr">end</span>
+
+<span class="kd">local</span> <span class="n">PLAYER_TECHNICAL_B</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetPlayerTypeByName</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">PLAYER_TECHNICAL_C</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetPlayerTypeByName</span><span class="p">(</span><span class="s2">&quot;​?&quot;</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">persistGameData</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetPersistentGameData</span><span class="p">()</span>
+<span class="kd">local</span> <span class="n">ACH_TARNISHED_TECHNICAL</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetAchievementIdByName</span><span class="p">(</span><span class="s2">&quot;CHARACTER_?&quot;</span><span class="p">)</span>
+
+<span class="n">Mod</span><span class="p">:</span><span class="n">AddCallback</span><span class="p">(</span><span class="n">ModCallbacks</span><span class="p">.</span><span class="n">MC_POST_MODS_LOADED</span><span class="p">,</span> <span class="kr">function</span> <span class="p">()</span>
+    <span class="c1">--You should always check for not just the Epiphany global, but that it&#39;s also on the correct version.</span>
+    <span class="c1">--This is because the legacy version of Epiphany is a separate upload on the workshop, the last wave available there being 7.5.</span>
+    <span class="c1">--Only apply the patch for Wave 8 or above so that you know you&#39;re working with the REPENTOGON-exclusive version of Epiphany.</span>
+    <span class="kr">if</span> <span class="n">Epiphany</span> <span class="ow">and</span> <span class="nb">tonumber</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">WAVE_NUMBER</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="kr">then</span>
+        <span class="n">Epiphany</span><span class="p">.</span><span class="n">API</span><span class="p">.</span><span class="n">AddCharacter</span><span class="p">({</span>
+            <span class="n">charName</span> <span class="o">=</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span>
+            <span class="n">charID</span> <span class="o">=</span> <span class="n">PLAYER_TECHNICAL_C</span><span class="p">,</span>
+            <span class="n">playerAnm2</span> <span class="o">=</span> <span class="s2">&quot;gfx/tarnished_technical.anm2&quot;</span><span class="p">,</span>
+            <span class="n">menuGraphics</span> <span class="o">=</span> <span class="s2">&quot;gfx/ui/main menu/tarnished_technical_menu.anm2&quot;</span><span class="p">,</span>
+            <span class="n">taintedID</span> <span class="o">=</span> <span class="n">PLAYER_TECHNICAL_B</span><span class="p">,</span>
+            <span class="n">unlockChecker</span> <span class="o">=</span> <span class="kr">function</span> <span class="p">()</span>
+                <span class="kr">return</span> <span class="n">persistGameData</span><span class="p">:</span><span class="n">Unlocked</span><span class="p">(</span><span class="n">ACH_TARNISHED_TECHNICAL</span><span class="p">)</span>
+            <span class="kr">end</span><span class="p">,</span>
+            <span class="n">floorTutorial</span> <span class="o">=</span> <span class="s2">&quot;gfx/tarnished_technical_controls.anm2&quot;</span><span class="p">,</span>
+            <span class="n">bloodTears</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">})</span>
+    <span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>After the patch is applied, you should see your tarnished character available through the tarnished menu!</p>
+<p><img alt="Tarnished ? on the main menu, locked" src="../../assets/adding_a_character/tarnished_menu_locked.jpg" /></p>
+<p><img alt="Tarnished ? on the main menu, unlocked" src="../../assets/adding_a_character/tarnished_menu_unlocked.jpg" /></p>
+<h2 id="mod-download">Mod Download<a class="headerlink" href="#mod-download" title="Permanent link">⚓︎</a></h2>
+<p>This example character is available as a downloadable mod, complete with a regular, tainted, and tarnished character.</p>
+<p>You can download the mod from <a href="https://github.com/BenevolusGoat/tarnished_example">this GitHub repository</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 11, 2026 23:40:02 UTC">September 11, 2026</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      BenevolusGoat
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tabs", "navigation.instant", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort.number.min.js"></script>
+      
+        <script src="../../js/customJS.js"></script>
+      
+        <script src="../../js/jquery.mark.min.js"></script>
+      
+    
+  </body>
+</html>

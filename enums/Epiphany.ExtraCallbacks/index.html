@@ -1,0 +1,3442 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Epiphany.CrimsonWispType/">
+      
+      
+        <link rel="next" href="../Epiphany.RoomClearType/">
+      
+      
+      <link rel="icon" href="../../img/epiphany_favicon.ico">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>ExtraCallbacks - Epiphany API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-extracallbacks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Epiphany API Docs" class="md-header__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Epiphany API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ExtraCallbacks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../globals/" class="md-tabs__link">
+          
+  
+  Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/adding_a_character/" class="md-tabs__link">
+          
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Epiphany API Docs" class="md-nav__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    Epiphany API Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mod Global
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Enums
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Enums
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.API.BagGFXPriority/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagGFXPriority
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.API.BagSynergyFlags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSynergyFlags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.API.CardGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CardGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.API.HeartGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HeartGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.API.SlotGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlotGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.CrimsonWispMaturity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispMaturity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.CrimsonWispType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ExtraCallbacks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ExtraCallbacks
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turnover_get_pickup_pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_GET_PICKUP_POOL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnover_get_layout_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_GET_LAYOUT_INFO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnover_get_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_GET_PRICE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnover_post_create_shop" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_POST_CREATE_SHOP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_unlock_cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_UNLOCK_CACHE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_achievement_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_ACHIEVEMENT_GET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_bag_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_BAG_ITEM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_create_bag" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_CREATE_BAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_swing_hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_SWING_HIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_bag_throw" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_BAG_THROW
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_bag_hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_BAG_HIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_punch_entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PUNCH_ENTITY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_punch_grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PUNCH_GRID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_SLAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_dash_hit_enemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_DASH_HIT_ENEMY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_dash_hit_wall" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_DASH_HIT_WALL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_punch" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_PUNCH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_boulder_dead" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_BOULDER_DEAD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_hitbox_generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_HITBOX_GENERATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_post_throw_boulder" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_POST_THROW_BOULDER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_damage_entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_DAMAGE_ENTITY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_damage_entity_dash" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_DAMAGE_ENTITY_DASH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_post_hitbox_generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_POST_HITBOX_GENERATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_boulder_sprite_init" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_BOULDER_SPRITE_INIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_consume_heart" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_CONSUME_HEART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magdalene_pre_consume_heart" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAGDALENE_PRE_CONSUME_HEART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player_damaged_entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      PLAYER_DAMAGED_ENTITY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_on_death" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLOT_ON_DEATH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_grid_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_GRID_UPDATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_grid_destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_GRID_DESTROY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rock_spawn_drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROCK_SPAWN_DROPS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarnished_player_init" class="md-nav__link">
+    <span class="md-ellipsis">
+      TARNISHED_PLAYER_INIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esau_jr_init" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESAU_JR_INIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_room_clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_ROOM_CLEAR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_multitool_open_chest" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_MULTITOOL_OPEN_CHEST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_game_started" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_GAME_STARTED
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_first_page_clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_FIRST_PAGE_CLONE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_player_grid_collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_PLAYER_GRID_COLLISION
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_golden_active_render" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_GOLDEN_ACTIVE_RENDER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bethany_pre_consume_heart" class="md-nav__link">
+    <span class="md-ellipsis">
+      BETHANY_PRE_CONSUME_HEART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_playertype_change" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_PLAYERTYPE_CHANGE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#essence_of_cain_revert_pedestal" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESSENCE_OF_CAIN_REVERT_PEDESTAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crimson_wisp_growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRIMSON_WISP_GROWTH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules_card_get_room_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      RULES_CARD_GET_ROOM_TYPE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules_card_spawn_room_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      RULES_CARD_SPAWN_ROOM_TYPE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bethany_update_skin_color" class="md-nav__link">
+    <span class="md-ellipsis">
+      BETHANY_UPDATE_SKIN_COLOR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_locust_damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_LOCUST_DAMAGE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_aquarious_damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_AQUARIOUS_DAMAGE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remembrance_wisp_post_spawn_famliiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      REMEMBRANCE_WISP_POST_SPAWN_FAMLIIAR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_graft_collectible" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_GRAFT_COLLECTIBLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_open_dusty_chest" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_OPEN_DUSTY_CHEST
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Epiphany.RoomClearType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RoomClearType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagMetaData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagMetaData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagsInfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagsInfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BurstParamsConfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BurstParamsConfig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ImpactBurstParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ImpactBurstParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/SwingingBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SwingingBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ThrownBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ThrownBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/adding_a_character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding a Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/golden_items/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Golden items
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/item_pools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item pools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/item_tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/menu_music/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Menu music
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/minor_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minor compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/object_groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/sample_bombs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample bombs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/throwing_bag_synergies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Throwing Bag
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/turnover_shops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Turnover shops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turnover_get_pickup_pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_GET_PICKUP_POOL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnover_get_layout_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_GET_LAYOUT_INFO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnover_get_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_GET_PRICE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnover_post_create_shop" class="md-nav__link">
+    <span class="md-ellipsis">
+      TURNOVER_POST_CREATE_SHOP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_unlock_cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_UNLOCK_CACHE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_achievement_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_ACHIEVEMENT_GET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_bag_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_BAG_ITEM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_create_bag" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_CREATE_BAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_swing_hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_SWING_HIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_bag_throw" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_BAG_THROW
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cain_post_bag_hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAIN_POST_BAG_HIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_punch_entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PUNCH_ENTITY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_punch_grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PUNCH_GRID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_SLAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_dash_hit_enemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_DASH_HIT_ENEMY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_dash_hit_wall" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_DASH_HIT_WALL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_punch" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_PUNCH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_boulder_dead" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_BOULDER_DEAD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_hitbox_generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_HITBOX_GENERATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_post_throw_boulder" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_POST_THROW_BOULDER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_damage_entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_DAMAGE_ENTITY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_damage_entity_dash" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_DAMAGE_ENTITY_DASH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_post_hitbox_generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_POST_HITBOX_GENERATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_boulder_sprite_init" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_BOULDER_SPRITE_INIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samson_pre_consume_heart" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAMSON_PRE_CONSUME_HEART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magdalene_pre_consume_heart" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAGDALENE_PRE_CONSUME_HEART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player_damaged_entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      PLAYER_DAMAGED_ENTITY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot_on_death" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLOT_ON_DEATH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_grid_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_GRID_UPDATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_grid_destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_GRID_DESTROY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rock_spawn_drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROCK_SPAWN_DROPS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarnished_player_init" class="md-nav__link">
+    <span class="md-ellipsis">
+      TARNISHED_PLAYER_INIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esau_jr_init" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESAU_JR_INIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_room_clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_ROOM_CLEAR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_multitool_open_chest" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_MULTITOOL_OPEN_CHEST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_game_started" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_GAME_STARTED
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_first_page_clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_FIRST_PAGE_CLONE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_player_grid_collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_PLAYER_GRID_COLLISION
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_golden_active_render" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_GOLDEN_ACTIVE_RENDER
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bethany_pre_consume_heart" class="md-nav__link">
+    <span class="md-ellipsis">
+      BETHANY_PRE_CONSUME_HEART
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_playertype_change" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_PLAYERTYPE_CHANGE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#essence_of_cain_revert_pedestal" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESSENCE_OF_CAIN_REVERT_PEDESTAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crimson_wisp_growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRIMSON_WISP_GROWTH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules_card_get_room_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      RULES_CARD_GET_ROOM_TYPE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules_card_spawn_room_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      RULES_CARD_SPAWN_ROOM_TYPE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bethany_update_skin_color" class="md-nav__link">
+    <span class="md-ellipsis">
+      BETHANY_UPDATE_SKIN_COLOR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_locust_damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_LOCUST_DAMAGE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_aquarious_damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_AQUARIOUS_DAMAGE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remembrance_wisp_post_spawn_famliiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      REMEMBRANCE_WISP_POST_SPAWN_FAMLIIAR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_graft_collectible" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST_GRAFT_COLLECTIBLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_open_dusty_chest" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_OPEN_DUSTY_CHEST
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="enum-extracallbacks">Enum "ExtraCallbacks"<a class="headerlink" href="#enum-extracallbacks" title="Permanent link">⚓︎</a></h1>
+<p>This is a list of all new callbacks added by Epiphany. Instead of using your mod reference, call the function <code>Epiphany:AddExtraCallback</code> or <code>Epiphany:AddExtraPriorityCallback</code> with the same parameters. The enums themselves are accessible through <code>Epiphany.ExtraCallbacks</code>.</p>
+<h2 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">⚓︎</a></h2>
+<h3 class="copyable" id="turnover_get_pickup_pool">TURNOVER_GET_PICKUP_POOL<a class="headerlink" href="#turnover_get_pickup_pool" title="Permanent link">⚓︎</a></h3>
+<p>Called when getting the pickup pool of a Turnover shop, which defines what pickups can be chosen to spawn as a shop item. Accepts returning a new pool to override it.</p>
+<p>See <a href="../../guides/turnover_shops/">this guide on Turnover shops</a> for more information.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">TURNOVER_GET_PICKUP_POOL</td>
+<td style="text-align: left;">(table Pool, integer currentTier, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">table PickupPool</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="turnover_get_layout_info">TURNOVER_GET_LAYOUT_INFO<a class="headerlink" href="#turnover_get_layout_info" title="Permanent link">⚓︎</a></h3>
+<p>Called when getting the layout of a Turnover shop, which defines positions of shop items and what kind of item will be sold. Accepts returning a new layout to override it.</p>
+<p>See <a href="../../guides/turnover_shops/">this guide on Turnover shops</a> for more information.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">TURNOVER_GET_LAYOUT_INFO</td>
+<td style="text-align: left;">(table ShopLayout, integer CurrentTier, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">table ShopLayout</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="turnover_get_price">TURNOVER_GET_PRICE<a class="headerlink" href="#turnover_get_price" title="Permanent link">⚓︎</a></h3>
+<p>Called for each player with Turnover every game update to refresh the price of setting up a shop.</p>
+<p>Accepts returning a new price, or <code>false</code> to indicate that a shop cannot be set up and prevent later callback functions from running.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">TURNOVER_GET_PRICE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, integer ShopPrice, integer OriginalPrice)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">integer or boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="turnover_post_create_shop">TURNOVER_POST_CREATE_SHOP<a class="headerlink" href="#turnover_post_create_shop" title="Permanent link">⚓︎</a></h3>
+<p>Called after all the shop items are spawned for a Turnover shop. <code>SpawnedItems</code> passes an array of all the entities spawned by Turnover, including slot machines and the shopkeeper. Pickups and Collectibles are already cast to <a href="https://repentogon.com/EntityPickup.html">EntityPickup</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">TURNOVER_POST_CREATE_SHOP</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/Entity.html">Entity</a>[] SpawnedItems)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="pre_unlock_cache">PRE_UNLOCK_CACHE<a class="headerlink" href="#pre_unlock_cache" title="Permanent link">⚓︎</a></h3>
+<p>Called on MC_POST_GAME_STARTED on LATE priority. Passes a table with <code>Items</code> and <code>Cards</code> as variables. Used to define if modded items/cards are defined or not.</p>
+<details class="- note">
+<summary>REPENTOGON achievements</summary>
+<p>If your mod uses REPENTOGON achievements, this callback isn't necessary, as it will properly lock the item inside the vanilla game. If not cache'd already and there is an achievement ID tied to it, Epiphany will check <code>ItemConfig[Item/Card]:IsAvailable()</code>, then cache the result.</p>
+</details>
+<p>The table can be modified to have your <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a> or Card ID as the key, and a boolean for setting if they're unlocked or not.</p>
+<details class="example" open="open">
+<summary>Example Code</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="kd">local</span> <span class="n">FIRST_ITEM</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetItemIdByName</span><span class="p">(</span><span class="s2">&quot;My First Item&quot;</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">LAST_ITEM</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetItemIdByName</span><span class="p">(</span><span class="s2">&quot;My Last Item&quot;</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">FIRST_CARD</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetCardIdByName</span><span class="p">(</span><span class="s2">&quot;My First Card&quot;</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">LAST_CARD</span> <span class="o">=</span> <span class="n">Isaac</span><span class="p">.</span><span class="n">GetCardIdByName</span><span class="p">(</span><span class="s2">&quot;My Last Card&quot;</span><span class="p">)</span>
+    <span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallbacks</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">PRE_UNLOCK_CACHE</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cacheUnlocks</span><span class="p">)</span>
+        <span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">FIRST_ITEM</span><span class="p">,</span> <span class="n">LAST_ITEM</span> <span class="kr">do</span>
+            <span class="n">cachedUnlocks</span><span class="p">.</span><span class="n">Items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="kr">end</span>
+        <span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">FIRST_CARD</span><span class="p">,</span> <span class="n">LAST_CARD</span> <span class="kr">do</span>
+            <span class="n">cachedUnlocks</span><span class="p">.</span><span class="n">Cards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="kr">end</span>
+    <span class="kr">end</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PRE_UNLOCK_CACHE</td>
+<td style="text-align: left;">(table Unlocks)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_achievement_get">POST_ACHIEVEMENT_GET<a class="headerlink" href="#post_achievement_get" title="Permanent link">⚓︎</a></h3>
+<p>Called after an achievement from Epiphany is obtained. <code>Value</code> returns <code>1</code> for Normal Mode, <code>2</code> for Hard Mode. Does not run for achievements obtained through cheats. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_ACHIEVEMENT_GET</td>
+<td style="text-align: left;">(string AchievementName, integer Value)</td>
+<td style="text-align: left;">string AchievementName</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="cain_post_bag_item">CAIN_POST_BAG_ITEM<a class="headerlink" href="#cain_post_bag_item" title="Permanent link">⚓︎</a></h3>
+<p>Called after an item is bagged with Throwing Bag. Accepts no return parameters.</p>
+<details class="warning" open="open">
+<summary>Save data</summary>
+<p>The passed <a href="../../classes/BagsInfo/">BagsInfo</a> object is mutable and will reflect inside Epiphany's save data.</p>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">CAIN_POST_BAG_ITEM</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="../../classes/BagsInfo/">BagsInfo</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a> ID, boolean IsGolden)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="cain_post_create_bag">CAIN_POST_CREATE_BAG<a class="headerlink" href="#cain_post_create_bag" title="Permanent link">⚓︎</a></h3>
+<p>Called after a new Throwing Bag is created. Accepts no return parameters.</p>
+<details class="warning" open="open">
+<summary>Save data</summary>
+<p>The passed <a href="../../classes/BagsInfo/">BagsInfo</a> object is mutable and will reflect inside Epiphany's save data.</p>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">CAIN_POST_CREATE_BAG</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="../../classes/BagsInfo/">BagsInfo</a>, <a href="../../classes/BagData/">BagData</a>, string NewBagID)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="cain_post_swing_hit">CAIN_POST_SWING_HIT<a class="headerlink" href="#cain_post_swing_hit" title="Permanent link">⚓︎</a></h3>
+<p>Called after a throwing bag currently being swung hits an enemy. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">CAIN_POST_SWING_HIT</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityEffect.html">EntityEffect</a> SwingBag, <a href="https://repentogon.com/Entity.html">Entity</a> Enemy, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, SwingingBagData, float FinalDamage)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="cain_post_bag_throw">CAIN_POST_BAG_THROW<a class="headerlink" href="#cain_post_bag_throw" title="Permanent link">⚓︎</a></h3>
+<p>Called after a throwing bag is thrown. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">CAIN_POST_BAG_THROW</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityEffect.html">EntityEffect</a> ThrownBag, <a href="../../classes/BagData/">BagData</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="cain_post_bag_hit">CAIN_POST_BAG_HIT<a class="headerlink" href="#cain_post_bag_hit" title="Permanent link">⚓︎</a></h3>
+<p>Called after a throwing bag that was thrown hits an enemy.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">CAIN_POST_BAG_HIT</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityEffect.html">EntityEffect</a> ThrownBag, <a href="https://repentogon.com/Entity.html">Entity</a> Enemy, ThrownBagData, float FinalDamage)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_punch_entity">SAMSON_PUNCH_ENTITY<a class="headerlink" href="#samson_punch_entity" title="Permanent link">⚓︎</a></h3>
+<p>Called after Tarnished Samson hits an enemy with a punch or a slam. Accepts no return parameters.</p>
+<ul>
+<li><code>Incubus</code> passes <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a> if the attacker is a weapon-copying familiar like Incubus. Otherwise, passes <code>nil</code></li>
+<li><code>Hand</code>: Returns <code>"Left"</code> or <code>"Right"</code> depending on the hand hit the enemy. If <code>isSlam</code> is <code>true</code>, passes <code>nil</code> instead.</li>
+<li><code>Point1</code>: The first point of collision between the enemy and player attack.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PUNCH_ENTITY</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityNPC.html">EntityNPC</a> Enemy, boolean isSlam, <a href="https://repentogon.com/Vector.html">Vector</a> point1, <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a>? Incubus, string? Hand, number DmgDealt)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_punch_grid">SAMSON_PUNCH_GRID<a class="headerlink" href="#samson_punch_grid" title="Permanent link">⚓︎</a></h3>
+<p>Called after Tarnished Samson hits an enemy with a punch or a slam. Only gets called for doors, poop, rocks and moveable TNT. Accepts no return parameters.</p>
+<ul>
+<li><code>Incubus</code> passes <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a> if the attacker is a weapon-copying familiar like Incubus. Otherwise, passes <code>nil</code></li>
+<li><code>Hand</code>: Returns <code>"Left"</code> or <code>"Right"</code> depending on the hand hit the enemy. If <code>isSlam</code> is <code>true</code>, passes <code>nil</code> instead.</li>
+<li><code>Point1</code>: The first point of collision between the grid and player attack.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PUNCH_GRID</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/GridEntity.html">GridEntity</a>, boolean isSlam, <a href="https://repentogon.com/Vector.html">Vector</a> point1, <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a>? Incubus, string? Hand)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_slam">SAMSON_SLAM<a class="headerlink" href="#samson_slam" title="Permanent link">⚓︎</a></h3>
+<p>Called after Tarnished Samson performs a slam attack and after boulders are dropped, but before grids and entities are damaged. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_SLAM</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, number SlamRange)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_dash_hit_enemy">SAMSON_DASH_HIT_ENEMY<a class="headerlink" href="#samson_dash_hit_enemy" title="Permanent link">⚓︎</a></h3>
+<p>Called after a player performs a dash with Killer Instinct and hits an enemy. <code>Point1</code> is the first point of collision between grid and player attack. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_DASH_HIT_ENEMY</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityNPC.html">EntityNPC</a> Enemy, <a href="https://repentogon.com/Vector.html">Vector</a> Point1)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_dash_hit_wall">SAMSON_DASH_HIT_WALL<a class="headerlink" href="#samson_dash_hit_wall" title="Permanent link">⚓︎</a></h3>
+<p>Called after a player performs a dash with Killer Instinct and hits a grid or wall. <code>Point1</code> is the first point of collision between grid and player attack.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_DASH_HIT_WALL</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/Vector.html">Vector</a> Point1)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_pre_punch">SAMSON_PRE_PUNCH<a class="headerlink" href="#samson_pre_punch" title="Permanent link">⚓︎</a></h3>
+<p>Called after Tarnished Samson picks out entities in his hitbox range, but before they get damaged.</p>
+<p>Accepts returning an array of entities to override what entities are hit by the attack.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PRE_PUNCH</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/Vector.html">Vector</a> AttackDirection, <a href="https://repentogon.com/Entity.html">Entity</a>[] EntityList, <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a>? Incubus)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="https://repentogon.com/Entity.html">Entity</a>[]</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_boulder_dead">SAMSON_BOULDER_DEAD<a class="headerlink" href="#samson_boulder_dead" title="Permanent link">⚓︎</a></h3>
+<p>Called after a boulder dies.</p>
+<p>Collider passes <a href="https://repentogon.com/Entity.html">Entity</a> if detected that the boulder hit an entity before dying. Otherwise, passes <code>nil</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_BOULDER_DEAD</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/Entity.html">Entity</a>? Collider, number DamageAmount, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html">TearFlags</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_pre_hitbox_generate">SAMSON_PRE_HITBOX_GENERATE<a class="headerlink" href="#samson_pre_hitbox_generate" title="Permanent link">⚓︎</a></h3>
+<p>Called after a hitbox is generated for Tarnished Samson's punches, but before it is used to detect what collides with.</p>
+<p>Accepts returning an array of tables containing <code>Hitbox</code> and <code>Direction</code> to append additional hitboxes with the original one. Optionally, a boolean can be a second return value to prevent the original hitbox from being used.</p>
+<p>Hitboxes can be made with <code>Epiphany.Character.SAMSON:MakePunchHitbox([EntityPlayer](https://repentogon.com/EntityPlayer.html), number PunchLength, number PunchWidth, [Vector](https://repentogon.com/Vector.html) AimDirection, [EntityFamiliar](https://repentogon.com/EntityFamiliar.html)? Incubus, [Vector](https://repentogon.com/Vector.html)? Forced Position): SamsonHitboxData</code>.</p>
+<details class="example" open="open">
+<summary>Example Code</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">SAMSON_PRE_HITBOX_GENERATE</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">hitbox</span><span class="p">,</span> <span class="n">familiar</span><span class="p">)</span>
+    <span class="c1">--TODO: Actually write something here</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PRE_HITBOX_GENERATE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, SamsonHitboxData Hitbox, <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a>? Incubus)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">table or boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_post_throw_boulder">SAMSON_POST_THROW_BOULDER<a class="headerlink" href="#samson_post_throw_boulder" title="Permanent link">⚓︎</a></h3>
+<p>Called after a player through a boulder.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_POST_THROW_BOULDER</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityEffect.html">EntityEffect</a> Boulder)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_pre_damage_entity">SAMSON_PRE_DAMAGE_ENTITY<a class="headerlink" href="#samson_pre_damage_entity" title="Permanent link">⚓︎</a></h3>
+<p>Called between <a href="#samson_pre_punch">SAMSON_PRE_PUNCH</a> and <a href="#samson_punch_entity">SAMSON_PUNCH_ENTITY</a>, right before damage is dealt to an entity.</p>
+<ul>
+<li><code>Incubus</code> passes <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a> if the attacker is a weapon-copying familiar like Incubus. Otherwise, passes <code>nil</code></li>
+<li><code>Hand</code>: Returns <code>"Left"</code> or <code>"Right"</code> depending on the hand hit the enemy. If <code>isSlam</code> is <code>true</code>, passes <code>nil</code> instead.</li>
+<li><code>Point1</code>: The first point of collision between the enemy and player attack.</li>
+<li><code>PunchOrigin</code>: Origin of the punch hitbox. Not the center of the position, but where it originates from.  If <code>isSlam</code> is <code>true</code>, passes <code>nil</code> instead.</li>
+</ul>
+<p>Accepts returning <code>-1</code> to prevent damage or a table of any combination of the following variables to modify the damage:</p>
+<ul>
+<li>Multiply: Stacks additively with other <code>Multiply</code> modifiers,</li>
+<li>MultiplyExponential: Stacks exponentially with other <code>MultiplyExponential</code> modifiers,</li>
+<li>AddFlat: Applied after multipliers,</li>
+<li><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html">DamageFlags</a>: Adds <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/[TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html).html">[TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html)</a> to the damage.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PRE_DAMAGE_ENTITY</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityNPC.html">EntityNPC</a> Enemy, boolean IsSlam, <a href="https://repentogon.com/Vector.html">Vector</a> Point1, <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a>? Incubus, string Hand, <a href="https://repentogon.com/Vector.html">Vector</a> PunchOrigin)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>-1</code> or table</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_pre_damage_entity_dash">SAMSON_PRE_DAMAGE_ENTITY_DASH<a class="headerlink" href="#samson_pre_damage_entity_dash" title="Permanent link">⚓︎</a></h3>
+<p>Called before <a href="#samson_dash_hit_enemy">SAMSON_DASH_HIT_ENEMY</a> and before damage is dealt. <code>Point1</code> is the first point of collision between the enemy and player attack.</p>
+<p>Accepts returning <code>-1</code> to prevent damage or a table of any combination of the following variables to modify the damage:</p>
+<ul>
+<li>Multiply: Stacks additively with other <code>Multiply</code> modifiers,</li>
+<li>MultiplyExponential: Stacks exponentially with other <code>MultiplyExponential</code> modifiers,</li>
+<li>AddFlat: Applied after multipliers,</li>
+<li><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html">DamageFlags</a>: Adds <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/[TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html).html">[TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html)</a> to the damage.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PRE_DAMAGE_ENTITY_DASH</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityNPC.html">EntityNPC</a> Enemy, Point1)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>-1</code>  or table</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_post_hitbox_generate">SAMSON_POST_HITBOX_GENERATE<a class="headerlink" href="#samson_post_hitbox_generate" title="Permanent link">⚓︎</a></h3>
+<p>Called after <a href="#samson_pre_hitbox_generate">SAMSON_PRE_HITBOX_GENERATE</a> for each hitbox. Accepts returning a new <code>SamsonHitboxData</code> object to override the generated hitbox.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_POST_HITBOX_GENERATE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a>? Incubus, SamsonHitboxData Hitbox)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">SamsonHitboxData</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_pre_boulder_sprite_init">SAMSON_PRE_BOULDER_SPRITE_INIT<a class="headerlink" href="#samson_pre_boulder_sprite_init" title="Permanent link">⚓︎</a></h3>
+<p>Called before a stationary or thrown boulder has its sprite initialized.</p>
+<ul>
+<li><code>Tag</code>: A table that can hold arbitrary data for the purposes of synergies.</li>
+<li><code>Variant</code>: Can either be <code>1</code>, <code>2</code>, or <code>3</code>, corresponding to which spritesheet it should utilize for the boulder.</li>
+</ul>
+<p>Accepts returning a table of any combination of the following variables to modify the boulder sprite:</p>
+<ul>
+<li><code>Anm2</code>: String path to the anm2 to use for the boulder, or <code>nil</code> to use the default.</li>
+<li><code>ThrownAnm2</code>: String path to the anm2 to use for the boulder when it's thrown, or <code>nil</code> to use the default.</li>
+<li><code>Spritesheet</code>: String path to the spritesheet to use for the boulder.</li>
+<li><code>Priority</code>: Number denoting how important this sprite is. Higher numbers override lower numbers.</li>
+<li><code>DontUpdate</code>: Set to <code>true</code> to not update the spritesheet animations at all.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PRE_BOULDER_SPRITE_INIT</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, integer Variant, table Tag, <a href="https://repentogon.com/EntityEffect.html">EntityEffect</a> Boulder or <a href="https://repentogon.com/EntityTear.html">EntityTear</a> Boulder)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">table</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="samson_pre_consume_heart">SAMSON_PRE_CONSUME_HEART<a class="headerlink" href="#samson_pre_consume_heart" title="Permanent link">⚓︎</a></h3>
+<p>Called before Tarnished Samson consumes a heart pickup for Slaughter Bar tokens while in Immortal Rage.</p>
+<p>Accepts returning an integer to change the number of tokens gained from the heart, or <code>false</code> to prevent consuming the heart.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a SAMSON_PRE_CONSUME_HEART callback only for Soul Hearts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">SAMSON_PRE_CONSUME_HEART</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">heart</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">PickupVariant</span><span class="p">.</span><span class="n">PICKUP_HEART</span><span class="p">,</span> <span class="n">HeartSubType</span><span class="p">.</span><span class="n">HEART_SOUL</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SAMSON_PRE_CONSUME_HEART</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityPickup.html">EntityPickup</a> Heart, integer TokensGained)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PickupVariant.html">PickupVariant</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/HeartSubType.html">HeartSubType</a></td>
+<td style="text-align: left;">integer or boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="magdalene_pre_consume_heart">MAGDALENE_PRE_CONSUME_HEART<a class="headerlink" href="#magdalene_pre_consume_heart" title="Permanent link">⚓︎</a></h3>
+<p>Called before Tarnished Magdalene consumes a heart pickup for her bonus heart meter. Restricted to red hearts.</p>
+<p>Accepts returning an integer to change the number of bonus hearts gained from the heart, or <code>false</code> to prevent consuming the heart.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a MAGDALENE_PRE_CONSUME_HEART callback only for Soul Hearts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">MAGDALENE_PRE_CONSUME_HEART</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">heart</span><span class="p">,</span> <span class="n">bonusHearts</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">PickupVariant</span><span class="p">.</span><span class="n">PICKUP_HEART</span><span class="p">,</span> <span class="n">HeartSubType</span><span class="p">.</span><span class="n">HEART_FULL</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">MAGDALENE_PRE_CONSUME_HEART</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityPickup.html">EntityPickup</a> Heart, integer BonusHeartsGained)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PickupVariant.html">PickupVariant</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/HeartSubType.html">HeartSubType</a></td>
+<td style="text-align: left;">integer or boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="player_damaged_entity">PLAYER_DAMAGED_ENTITY<a class="headerlink" href="#player_damaged_entity" title="Permanent link">⚓︎</a></h3>
+<p>Called when the player has inflicted damage onto an entity.</p>
+<p>Triggers on <a href="https://repentogon.com/enums/ModCallbacks.html#mc_entity_take_dmg">MC_ENTITY_TAKE_DMG</a> if:
+- The <code>source</code> is the player, or was a source spawned by the player
+- The hit entity is an <a href="https://repentogon.com/EntityNPC.html">EntityNPC</a>
+- <a href="https://repentogon.com/EntityNPC.html">EntityNPC</a>:IsVulnerableEnemy() returns <code>true</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PLAYER_DAMAGED_ENTITY</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/Entity.html">Entity</a>, number Amount, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html">DamageFlags</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="slot_on_death">SLOT_ON_DEATH<a class="headerlink" href="#slot_on_death" title="Permanent link">⚓︎</a></h3>
+<p>Called after a slot machine dies.</p>
+<p>Triggers on <a href="https://repentogon.com/enums/ModCallbacks.html#mc_post_slot_update">MC_POST_SLOT_UPDATE</a> the first time that <a href="https://repentogon.com/EntitySlot.html#getstate">EntitySlot:GetState()</a> returns <a href="https://repentogon.com/enums/SlotState.html">SlotState.DESTROYED</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">SLOT_ON_DEATH</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntitySlot.html">EntitySlot</a>)</td>
+<td style="text-align: left;"><a href="https://repentogon.com/enums/SlotVariant.html">SlotVariant</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_grid_update">POST_GRID_UPDATE<a class="headerlink" href="#post_grid_update" title="Permanent link">⚓︎</a></h3>
+<p>Called every update frame for rocks, doors, and trapdoors. Accepts no return parameters.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a POST_GRID_UPDATE callback only for Twisted Rock:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">POST_GRID_UPDATE</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">gridEnt</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">GridEntityType</span><span class="p">.</span><span class="n">GRID_ROCK</span><span class="p">,</span> <span class="n">Epiphany</span><span class="p">.</span><span class="n">Grid</span><span class="p">.</span><span class="n">TWISTED_ROCK</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_GRID_UPDATE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/GridEntity.html">GridEntity</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/GridEntityType.html">GridEntityType</a>, integer GridVariant</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_grid_destroy">POST_GRID_DESTROY<a class="headerlink" href="#post_grid_destroy" title="Permanent link">⚓︎</a></h3>
+<p>Called once a specified grid entity is destroyed. Accepts no return parameters.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a POST_GRID_DESTROY callback only for Twisted Rock:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">POST_GRID_DESTROY</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">gridEnt</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">GridEntityType</span><span class="p">.</span><span class="n">GRID_ROCK</span><span class="p">,</span> <span class="n">Epiphany</span><span class="p">.</span><span class="n">Grid</span><span class="p">.</span><span class="n">TWISTED_ROCK</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_GRID_DESTROY</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/GridEntity.html">GridEntity</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/GridEntityType.html">GridEntityType</a>, integer GridVariant</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="rock_spawn_drops">ROCK_SPAWN_DROPS<a class="headerlink" href="#rock_spawn_drops" title="Permanent link">⚓︎</a></h3>
+<p>Called once when a rock type should spawn its drops. This accounts for destroying grid entities normally, a player throwing it as a tear via <a href="https://bindingofisaacrebirth.wiki.gg/wiki/Mom%27s_Bracelet">Mom's Bracelet</a>, or a <a href="https://bindingofisaacrebirth.wiki.gg/wiki/Polty">Polty</a> throwing it as a projectile.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a ROCK_SPAWN_DROPS callback only for Twisted Rock:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">ROCK_SPAWN_DROPS</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">gridType</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">ent</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">GridEntityType</span><span class="p">.</span><span class="n">GRID_ROCK</span><span class="p">,</span> <span class="n">Epiphany</span><span class="p">.</span><span class="n">Grid</span><span class="p">.</span><span class="n">TWISTED_ROCK</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">ROCK_SPAWN_DROPS</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/Vector.html">Vector</a> Position, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/GridEntityType.html">GridEntityType</a>, integer GridVariant, integer Seed, <a href="https://repentogon.com/GridEntity.html">GridEntity</a> Source or <a href="https://repentogon.com/EntityTear.html">EntityTear</a> or <a href="https://repentogon.com/EntityProjectile.html">EntityProjectile</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/GridEntityType.html">GridEntityType</a>, integer GridVariant</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="tarnished_player_init">TARNISHED_PLAYER_INIT<a class="headerlink" href="#tarnished_player_init" title="Permanent link">⚓︎</a></h3>
+<p>Called on <a href="https://repentogon.com/enums/ModCallbacks.html#mc_player_init_post_level_init_stats">MC_PLAYER_INIT_POST_LEVEL_INIT_STATS</a> for any tarnished character. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">TARNISHED_PLAYER_INIT</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="esau_jr_init">ESAU_JR_INIT<a class="headerlink" href="#esau_jr_init" title="Permanent link">⚓︎</a></h3>
+<p>Called when a player uses <a href="https://bindingofisaacrebirth.wiki.gg/wiki/Esau_Jr.">Esau Jr.</a> and the its state is initialized for the first time. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">ESAU_JR_INIT</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_room_clear">POST_ROOM_CLEAR<a class="headerlink" href="#post_room_clear" title="Permanent link">⚓︎</a></h3>
+<p>Called for every room clear-like event: room clear, challenge room wave, boss rush wave, greed mode wave. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_ROOM_CLEAR</td>
+<td style="text-align: left;">(<a href="../Epiphany.RoomClearType/">RoomClearType</a>)</td>
+<td style="text-align: left;"><a href="../Epiphany.RoomClearType/">RoomClearType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="pre_multitool_open_chest">PRE_MULTITOOL_OPEN_CHEST<a class="headerlink" href="#pre_multitool_open_chest" title="Permanent link">⚓︎</a></h3>
+<p>Called when a player touches a chest while holding the DROP key with at least 1 <a href="https://tboiepiphany.wiki.gg/wiki/Keys#Multitool">multitool</a>.</p>
+<p>Returning <code>true</code> will consume the multitool and open the chest.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PRE_MULTITOOL_OPEN_CHEST</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityPickup.html">EntityPickup</a> Chest)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PickupVariant.html">PickupVariant</a></td>
+<td style="text-align: left;">boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="pre_game_started">PRE_GAME_STARTED<a class="headerlink" href="#pre_game_started" title="Permanent link">⚓︎</a></h3>
+<p>Called on <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_post_player_init">MC_POST_PLAYER_INIT</a> - the first callback to be ran - when a run is started or continued. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PRE_GAME_STARTED</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, boolean IsContinued)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_first_page_clone">POST_FIRST_PAGE_CLONE<a class="headerlink" href="#post_first_page_clone" title="Permanent link">⚓︎</a></h3>
+<p>Called when a player uses <a href="https://tboiepiphany.wiki.gg/wiki/First_Page">First Page</a> and makes a duplicate of themselves as a Strawman-like player. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_FIRST_PAGE_CLONE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a> StrawmanPlayer, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a> ParentPlayer)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="pre_player_grid_collision">PRE_PLAYER_GRID_COLLISION<a class="headerlink" href="#pre_player_grid_collision" title="Permanent link">⚓︎</a></h3>
+<p>Called on REPENTOGON's <a href="https://repentogon.com/enums/ModCallbacks.html">MC_PRE_PLAYER_GRID_COLLISION</a>, before a player collides with a grid, but only when <a href="https://repentogon.com/GridEntity.html">GridEntity</a> doesn't return <code>nil</code>. Accepts no return arguments.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a PRE_PLAYER_GRID_COLLISION callback only for Twisted Rock:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">PRE_PLAYER_GRID_COLLISION</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">gridEnt</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">GridEntityType</span><span class="p">.</span><span class="n">GRID_ROCK</span><span class="p">,</span> <span class="n">Epiphany</span><span class="p">.</span><span class="n">Grid</span><span class="p">.</span><span class="n">TWISTED_ROCK</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PRE_PLAYER_GRID_COLLISION</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/GridEntity.html">GridEntity</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/GridEntityType.html">GridEntityType</a>, integer GridVariant</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="pre_golden_active_render">PRE_GOLDEN_ACTIVE_RENDER<a class="headerlink" href="#pre_golden_active_render" title="Permanent link">⚓︎</a></h3>
+<p>Called before a <a href="https://tboiepiphany.wiki.gg/wiki/Golden_Item">golden active item</a> is rendered on the HUD, which is rendered directly on top of the original active item.</p>
+<details class="info" open="open">
+<summary>HudHelper</summary>
+<p>This callback gets all of its parameters from the <a href="https://github.com/BenevolusGoat/hud-helper">HudHelper library</a>. More information on how its parameters function can be found <a href="https://github.com/BenevolusGoat/hud-helper/wiki/Registering-HUD-Elements">here</a> on the repository's wiki.</p>
+</details>
+<p>Return <code>true</code> to stop the default render. Ideal for customizing the golden active render yourself.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PRE_GOLDEN_ACTIVE_RENDER</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, integer PlayerHUDIndex, HUDLayout, <a href="https://repentogon.com/Vector.html">Vector</a> RenderPosition, float Alpha, float Scale, ActiveSlot)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a></td>
+<td style="text-align: left;">boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="bethany_pre_consume_heart">BETHANY_PRE_CONSUME_HEART<a class="headerlink" href="#bethany_pre_consume_heart" title="Permanent link">⚓︎</a></h3>
+<p>Called before Tarnished Bethany consumes a heart pickup for bonus charges.</p>
+<p>Accepts returning an integer to change the number of charges gained from the heart, or <code>false</code> to prevent consuming the heart.</p>
+<p>Can pass up to two optional arguments inside the AddExtraCallback function.</p>
+<details class="- example">
+<summary>Example Code</summary>
+<p>Runs a BETHANY_PRE_CONSUME_HEART callback only for Soul Hearts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Epiphany</span><span class="p">:</span><span class="n">AddExtraCallback</span><span class="p">(</span><span class="n">Epiphany</span><span class="p">.</span><span class="n">ExtraCallbacks</span><span class="p">.</span><span class="n">BETHANY_PRE_CONSUME_HEART</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">heart</span><span class="p">,</span> <span class="n">charges</span><span class="p">)</span>
+
+<span class="kr">end</span><span class="p">,</span> <span class="n">PickupVariant</span><span class="p">.</span><span class="n">PICKUP_HEART</span><span class="p">,</span> <span class="n">HeartSubType</span><span class="p">.</span><span class="n">HEART_SOUL</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">BETHANY_PRE_CONSUME_HEART</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/EntityPickup.html">EntityPickup</a> Heart, integer ChargesGained)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PickupVariant.html">PickupVariant</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/HeartSubType.html">HeartSubType</a></td>
+<td style="text-align: left;">integer or boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_playertype_change">POST_PLAYERTYPE_CHANGE<a class="headerlink" href="#post_playertype_change" title="Permanent link">⚓︎</a></h3>
+<p>Called after the current character's <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a> changes. Accepts no return arguments.</p>
+<p>The optional argument is checked against the player's previous <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_PLAYERTYPE_CHANGE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a> OldPlayerType)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="essence_of_cain_revert_pedestal">ESSENCE_OF_CAIN_REVERT_PEDESTAL<a class="headerlink" href="#essence_of_cain_revert_pedestal" title="Permanent link">⚓︎</a></h3>
+<p>Called when Essence of Cain searches for pedestals to revert to chests or slot machines.</p>
+<p>Accepts returning a table of <code>{EntityType, Variant}</code> to successfully convert the pedestal, or <code>false</code> to prevent it from being converted.</p>
+<details class="note" open="open">
+<summary>EntityType</summary>
+<p>The table return only accepts <code>EntityType.ENTITY_PICKUP</code> (intended for chests) and <code>EntityType.ENTITY_SLOT</code>. Otherwise, the return value will be ignored.</p>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">ESSENCE_OF_CAIN_REVERT_PEDESTAL</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPickup.html">EntityPickup</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">table or boolean</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="crimson_wisp_growth">CRIMSON_WISP_GROWTH<a class="headerlink" href="#crimson_wisp_growth" title="Permanent link">⚓︎</a></h3>
+<p>Called after a Crimson Wisp matures by one stage. Accepts no return arguments.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">CRIMSON_WISP_GROWTH</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a> Wisp)</td>
+<td style="text-align: left;"><a href="../Epiphany.CrimsonWispType/">CrimsonWispType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="rules_card_get_room_type">RULES_CARD_GET_ROOM_TYPE<a class="headerlink" href="#rules_card_get_room_type" title="Permanent link">⚓︎</a></h3>
+<p>Called when House Rules Card attempts to get the <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a> of the current room.</p>
+<p>Accepts returning a <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a> to override it, or a string to define as custom room name.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">RULES_CARD_GET_ROOM_TYPE</td>
+<td style="text-align: left;">(<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a></td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a> or string</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="rules_card_spawn_room_type">RULES_CARD_SPAWN_ROOM_TYPE<a class="headerlink" href="#rules_card_spawn_room_type" title="Permanent link">⚓︎</a></h3>
+<p>Called when House Rules Card spawns a room on a new floor.</p>
+<p>Accepts returning a boolean to prevent generating a room, a <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a> to change what type of room is generated, or a RoomConfigRoom object to place it on the floor.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">RULES_CARD_SPAWN_ROOM_TYPE</td>
+<td style="text-align: left;">(<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a> OR string RoomName)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a></td>
+<td style="text-align: left;">boolean or <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/RoomType.html">RoomType</a> or RoomConfigRoom</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="bethany_update_skin_color">BETHANY_UPDATE_SKIN_COLOR<a class="headerlink" href="#bethany_update_skin_color" title="Permanent link">⚓︎</a></h3>
+<p>Called whenever Bethany's skin color on her head or body changes. Used for updating her costumes to a unique skin color that otherwise don't have one. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">BETHANY_UPDATE_SKIN_COLOR</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/SkinColor.html">SkinColor</a> HeadColor, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/SkinColor.html">SkinColor</a> BodyColor)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_locust_damage">POST_LOCUST_DAMAGE<a class="headerlink" href="#post_locust_damage" title="Permanent link">⚓︎</a></h3>
+<p>Called whenever an Abyss locust damages an entity. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_LOCUST_DAMAGE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a> Locust, <a href="https://repentogon.com/Entity.html">Entity</a> Hitter, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a> Owner, number DamageAmount, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html">DamageFlags</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_aquarious_damage">POST_AQUARIOUS_DAMAGE<a class="headerlink" href="#post_aquarious_damage" title="Permanent link">⚓︎</a></h3>
+<p>Called whenever aquarious creep damages an entity. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_AQUARIOUS_DAMAGE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityEffect.html">EntityEffect</a> Creep, <a href="https://repentogon.com/Entity.html">Entity</a> Hitter, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a> Owner, number DamageAmount, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html">DamageFlags</a>)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="remembrance_wisp_post_spawn_famliiar">REMEMBRANCE_WISP_POST_SPAWN_FAMLIIAR<a class="headerlink" href="#remembrance_wisp_post_spawn_famliiar" title="Permanent link">⚓︎</a></h3>
+<p>Called after a Remembrance wisp spawns a familiar it contained. Runs twice as it always spawns two of the familiar. Accepts no return parameters.</p>
+<p><code>CustomName</code> will pass a string identifier for a mod's familiar if spawned. Otherwise, returns <code>nil</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">REMEMBRANCE_WISP_POST_SPAWN_FAMLIIAR</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityFamiliar.html">EntityFamiliar</a> SpawnedFamiliar, string CustomName)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/FamiliarVariant.html">FamiliarVariant</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="post_graft_collectible">POST_GRAFT_COLLECTIBLE<a class="headerlink" href="#post_graft_collectible" title="Permanent link">⚓︎</a></h3>
+<p>Called when a player has a collectible grafted unto them through the Grafting Altar. Accepts no return parameters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">POST_GRAFT_COLLECTIBLE</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://repentogon.com/ItemConfig_Item.html">ItemConfigItem</a> GraftedItem)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a></td>
+<td style="text-align: left;">void</td>
+</tr>
+</tbody>
+</table>
+<h3 class="copyable" id="pre_open_dusty_chest">PRE_OPEN_DUSTY_CHEST<a class="headerlink" href="#pre_open_dusty_chest" title="Permanent link">⚓︎</a></h3>
+<p>Called when a player attempts to open a Dusty Chest. This runs after checking for Pay to Play and if it's a unique Keeper Dusty Chest to open with money, but before player-specific checks.</p>
+<p>Accepts returning a boolean to control chest behaviour. Return <code>false</code> to prevent opening the chest, or <code>true</code> to allow opening the chest. Returning nothing or <code>nil</code> will move forward with normal behaviour.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Function Args</th>
+<th style="text-align: left;">Optional Args</th>
+<th style="text-align: left;">Return Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="copyable" style="text-align: left;">PRE_OPEN_DUSTY_CHEST</td>
+<td style="text-align: left;">(<a href="https://repentogon.com/EntityPickup.html">EntityPickup</a> Chest, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>)</td>
+<td style="text-align: left;"><a href="https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html">PlayerType</a></td>
+<td style="text-align: left;">boolean</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 11, 2026 23:40:02 UTC">September 11, 2026</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      BenevolusGoat
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tabs", "navigation.instant", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort.number.min.js"></script>
+      
+        <script src="../../js/customJS.js"></script>
+      
+        <script src="../../js/jquery.mark.min.js"></script>
+      
+    
+  </body>
+</html>

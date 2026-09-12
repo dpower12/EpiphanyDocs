@@ -22,8 +22,8 @@ jobs:
           EXTRA_PACKAGES: build-base
           # GITHUB_DOMAIN: github.myenterprise.com
           REQUIREMENTS: requirements.txt
-repo_url: https://github.com/dpower12/dpower12.github.io
-repo_name: dpower12/dpower12.github.io
+repo_url: https://github.com/dpower12/EpiphanyDocs
+repo_name: dpower12/EpiphanyDocs
 edit_uri: edit/main/docs/
 site_url: ""
 use_directory_urls: False

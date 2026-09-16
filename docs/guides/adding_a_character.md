@@ -13,7 +13,7 @@ In addition to the work-in-progress set of tarnished characters for the vanilla 
 	**Optional:**
 
 	- Hit sounds, death sounds, starting stats, pocket actives, starting health, and character costume can all be defined in [players.xml](https://repentogon.com/xml/players.html).
-	- New attributes to `Epiphany.API.AddCharacter`: `blockedItems`, `blockedTrinkets`, `hairCostumeItems`, `hairCostumeNulls`, `bloodTears`, `nullStats`. See [this section](#registering-the-tarnished) for more information.
+	- New attributes to `Epiphany.API.AddCharacter`: `blockedItems`, `blockedTrinkets`, `hairCostumeItems`, `hairCostumeNulls`. See [this section](#registering-the-tarnished) for more information.
 	- To ensure your tarnished only applies to Epiphany Wave 8 and up, you can require a version check on top of the global check before you add your tarnished, being: `Epiphany and tonumber(Epiphany.WAVE_NUMBER) >= 8`.
 
 ## Setting up your character
@@ -144,8 +144,6 @@ Epiphany.API.AddCharacter(charInfo: table)
 |unlockChecker|function|Doesn't pass any arguments. Return a `boolean` for whether or not the tarnished is unlocked|
 |floorTutorial|string|Path to an anm2 file. Must have one animation named "Tutorial" that holds the character tutorial. Unlike vanilla, does not support dynamic input sprites, so it must display keys manually|
 |charStats|table|Accepts (bool)`FLYING`, (TearFlags)`TEAR_FLAGS`, (Color)`TEAR_COLOR`, and (Color)`LASER_COLOR` as variables inside the table. More are available, but remain for backwards compatibility pre-Wave 8|
-|nullStats|integer|ID for a null item obtained with [Isaac.GetNullItemIdByName](https://repentogon.com/Isaac.html#getnullitemidbyname). Use for applying flat/multiplicative tears/damage to your tarnished|
-|bloodTears|boolean|Set to `true` to have your tarnished shoot blood variants of tears|
 |hairCostumeItems|table|Map of CollectibleType to string containing a png filename. See [Item-specific hair costumes](#item-specific-hair-costumes)|
 |hairCostumeNulls|table|Map of NullItemID to string containing a png filename. See [Item-specific hair costumes](#item-specific-hair-costumes)|
 |blockedItems|table|Array of CollectibleType that will be blocked for the tarnished, acting as if they don't have the item. See [Overriding collectibles and trinkets](#overriding-collectibles-and-trinkets)|

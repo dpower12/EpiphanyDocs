@@ -25,6 +25,7 @@ nav:
     - "ThrownBagData": classes/ThrownBagData.md
   - Guides:
     - "Adding a Character": guides/adding_a_character.md
+    - "Golden beggars": guides/golden_beggars.md
     - "Golden items": guides/golden_items.md
     - "Item pools": guides/item_pools.md
     - "Item tags": guides/item_tags.md

@@ -1,0 +1,1605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../golden_beggars/">
+      
+      
+        <link rel="next" href="../item_pools/">
+      
+      
+      <link rel="icon" href="../../img/epiphany_favicon.ico">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Golden items - Epiphany API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#helper-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Epiphany API Docs" class="md-header__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Epiphany API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Golden items
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../globals/" class="md-tabs__link">
+          
+  
+  Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../adding_a_character/" class="md-tabs__link">
+          
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Epiphany API Docs" class="md-nav__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    Epiphany API Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mod Global
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Enums
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Enums
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.BagGFXPriority/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagGFXPriority
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.BagSynergyFlags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSynergyFlags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.CardGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CardGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.HeartGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HeartGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.SlotGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlotGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.CrimsonWispMaturity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispMaturity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.CrimsonWispType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.ExtraCallbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtraCallbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.RoomClearType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RoomClearType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagMetaData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagMetaData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagsInfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagsInfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BurstParamsConfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BurstParamsConfig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ImpactBurstParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ImpactBurstParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/SwingingBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SwingingBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ThrownBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ThrownBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding_a_character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding a Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bad_company/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bad Company
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../golden_beggars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Golden beggars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Golden items
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Golden items
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helper Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anyplayerhasgoldencollectible" class="md-nav__link">
+    <span class="md-ellipsis">
+      AnyPlayerHasGoldenCollectible ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canactivategoldeneffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      CanActivateGoldenEffect ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasgoldenitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      HasGoldenItem ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isgoldenpedestal" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsGoldenPedestal ()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addgoldenactivesynergy" class="md-nav__link">
+    <span class="md-ellipsis">
+      AddGoldenActiveSynergy ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addsharedgoldenactiveuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      AddSharedGoldenActiveUse ()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-item-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      External Item Descriptions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_pools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item pools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu_music/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Menu music
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minor_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minor compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remembrance_familiars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remembrance familiars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample_bombs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample bombs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../throwing_bag_synergies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Throwing Bag
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../true_love/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    True Love
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turnover_shops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Turnover shops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helper Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anyplayerhasgoldencollectible" class="md-nav__link">
+    <span class="md-ellipsis">
+      AnyPlayerHasGoldenCollectible ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canactivategoldeneffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      CanActivateGoldenEffect ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasgoldenitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      HasGoldenItem ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isgoldenpedestal" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsGoldenPedestal ()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addgoldenactivesynergy" class="md-nav__link">
+    <span class="md-ellipsis">
+      AddGoldenActiveSynergy ()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addsharedgoldenactiveuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      AddSharedGoldenActiveUse ()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-item-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      External Item Descriptions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Golden items</h1>
+
+<p><a href="https://tboiepiphany.wiki.gg/wiki/Golden_Item">Golden Items</a> are a rare unlockable variant of collectibles in Epiphany, gaining a golden shine. A golden passive item will simply grant two of the item. A golden active item will enact a Car Battery effect where it activates twice, however there are many instances where it is instead given a completely unique effect. This guide covers everything available for interacting with golden items and creating custom golden active item synergies.</p>
+<details class="info" open="open">
+<summary>Designnig golden actives</summary>
+<p>Golden active items should be designed with the same design philosophy as golden trinkets: A marginal upgrade to the item's effects due to its rarity, either by making an existing aspect of the item stronger or adding a new effect in line with how the item works. There's also two specific types of golden active synergies that should be kept in mind:</p>
+<ol>
+<li>Most one-time-use active items should be able to be used twice. You can remove the golden status of an active item through <code>Epiphany:ExaustGoldenItem(itemID, player, slot)</code> and, as this is your own modded active, can control whether or not its removed.</li>
+<li>Specific actives that don't change its effects, but instead reduce its maximum charge. This is done for a few actives that can't work when activated twice and also don't have any good options for a unique effect either, such as Clicker, Gello, and the Pony actives.</li>
+</ol>
+</details>
+<h2 id="helper-functions">Helper Functions<a class="headerlink" href="#helper-functions" title="Permanent link">⚓︎</a></h2>
+<p>These functions are all different ways to detect if a golden item is present on a player or pedestal.</p>
+<h3 aria-label="Functions" id="anyplayerhasgoldencollectible">AnyPlayerHasGoldenCollectible ()<a class="headerlink" href="#anyplayerhasgoldencollectible" title="Permanent link">⚓︎</a></h3>
+<h4 aria-label="Functions" id="boolean-epiphanyapianyplayerhasgoldencollectible-collectibletype">boolean Epiphany.API.AnyPlayerHasGoldenCollectible (<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a>)<a class="headerlink" href="#boolean-epiphanyapianyplayerhasgoldencollectible-collectibletype" title="Permanent link">⚓︎</a></h4>
+<p>Returns <code>true</code> if any player has the provided <code>CollectibleType</code> as a golden active item.</p>
+<hr />
+<h3 aria-label="Functions" id="canactivategoldeneffect">CanActivateGoldenEffect ()<a class="headerlink" href="#canactivategoldeneffect" title="Permanent link">⚓︎</a></h3>
+<h4 aria-label="Functions" id="boolean-epiphanyapicanactivategoldeneffect-collectibletype-entityplayer-activeslot-nil">boolean Epiphany.API.CanActivateGoldenEffect (<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a>, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/ActiveSlot.html">ActiveSlot</a> = nil)<a class="headerlink" href="#boolean-epiphanyapicanactivategoldeneffect-collectibletype-entityplayer-activeslot-nil" title="Permanent link">⚓︎</a></h4>
+<p>Returns <code>true</code> if the item usage is valid for activating its golden effect. For use within callbacks related to activations of the item such as <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_use_item">MC_USE_ITEM</a>, having extra checks for the <code>nogoldenitem</code> tag and if it should be activated from Void.</p>
+<hr />
+<h3 aria-label="Functions" id="hasgoldenitem">HasGoldenItem ()<a class="headerlink" href="#hasgoldenitem" title="Permanent link">⚓︎</a></h3>
+<h4 aria-label="Functions" id="boolean-epiphanyapihasgoldenitem-collectibletype-entityplayer-activeslot-nil">boolean Epiphany.API.HasGoldenItem (<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a>, <a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/ActiveSlot.html">ActiveSlot</a> = nil)<a class="headerlink" href="#boolean-epiphanyapihasgoldenitem-collectibletype-entityplayer-activeslot-nil" title="Permanent link">⚓︎</a></h4>
+<p>Returns <code>true</code> if the player has the provided <code>CollectibleType</code> as a golden active item. Leaving <code>ActiveSlot</code> as <code>nil</code> will search all active slots on the player.</p>
+<hr />
+<h3 aria-label="Functions" id="isgoldenpedestal">IsGoldenPedestal ()<a class="headerlink" href="#isgoldenpedestal" title="Permanent link">⚓︎</a></h3>
+<h4 aria-label="Functions" id="boolean-epiphanyapiisgoldenpedestal-entitypickup">boolean Epiphany.API.IsGoldenPedestal (<a href="https://repentogon.com/EntityPickup.html">EntityPickup</a>)<a class="headerlink" href="#boolean-epiphanyapiisgoldenpedestal-entitypickup" title="Permanent link">⚓︎</a></h4>
+<p>Returns <code>true</code> if pickup is a pedestal containing a golden item.</p>
+<hr />
+<h2 id="main-functions">Main Functions<a class="headerlink" href="#main-functions" title="Permanent link">⚓︎</a></h2>
+<p>These are the functions you should use for changing the default behaviour of golden active items.</p>
+<h3 aria-label="Functions" id="addgoldenactivesynergy">AddGoldenActiveSynergy ()<a class="headerlink" href="#addgoldenactivesynergy" title="Permanent link">⚓︎</a></h3>
+<h4 aria-label="Functions" id="void-epiphanyapiaddgoldenactivesynergy-collectibletype-functionentityplayer-collectibletype-rng-useflag-activeslot-int-vardata-synergyfunc">void Epiphany.API.AddGoldenActiveSynergy (<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a>, function(<a href="https://repentogon.com/EntityPlayer.html">EntityPlayer</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/RNG.html">RNG</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/UseFlag.html">UseFlag</a>, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/ActiveSlot.html">ActiveSlot</a>, int varData) SynergyFunc)<a class="headerlink" href="#void-epiphanyapiaddgoldenactivesynergy-collectibletype-functionentityplayer-collectibletype-rng-useflag-activeslot-int-vardata-synergyfunc" title="Permanent link">⚓︎</a></h4>
+<p>Overrides default behaviour of triggering the active item a second time, instead calling the passed function.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Golden active uses are called on <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_use_item">MC_USE_ITEM</a> on EARLY priority, meaning it will activate before most modded actives. This is due to the fact that modded actives typically return early on normal priority, preventing future callbacks from running. In most cases, you'll want to pass an empty function into this and use the helper callbacks above directly within your active item's code. This will also disable the default text of "Triggers the item twice!" from the EID entry.</p>
+</details>
+<hr />
+<h3 aria-label="Functions" id="addsharedgoldenactiveuse">AddSharedGoldenActiveUse ()<a class="headerlink" href="#addsharedgoldenactiveuse" title="Permanent link">⚓︎</a></h3>
+<h4 aria-label="Functions" id="void-epiphanyapiaddsharedgoldenactiveuse-collectibletype-childitem-collectibletype-parentitem">void Epiphany.API.AddSharedGoldenActiveUse (<a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a> ChildItem, <a href="https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html">CollectibleType</a> ParentItem)<a class="headerlink" href="#void-epiphanyapiaddsharedgoldenactiveuse-collectibletype-childitem-collectibletype-parentitem" title="Permanent link">⚓︎</a></h4>
+<p>Treats uses of <code>ChildItem</code> on a slot of <code>-1</code> as a use of a golden active item if <code>ParentItem</code> is a golden active item on the same player. By default, this is used by D Infinity and its uses of other dice items.</p>
+<hr />
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">⚓︎</a></h2>
+<p>A quick list of other things to keep in mind for golden active items:</p>
+<ul>
+<li>Epiphany.Pickup.GOLDEN_ITEM.DisableGoldPedestal can be set to <code>true</code> before spawning a pedestal to mark it as not able to spawn as a golden pedestal</li>
+<li>By default, a copy of the default active item sprite is rendered above the regular active item on the HUD. For active items that have multiple sprites via custom rendering or a crop offset, you can use Epiphany.ExtraCallbacks.PRE_GOLDEN_ACTIVE_RENDER to cancel the default rendering and handle the golden rendering yourself.</li>
+<li>The custom tag <a href="../item_tags/">nogoldenitem</a> can be used in the items.xml file to prevent the item from spawning as a golden item naturally. It can still be forcibly turned into a golden via methods such as Essence of the Keeper, but the tag also stops any additional effects, so it will not activate twice.</li>
+</ul>
+<h2 id="external-item-descriptions">External Item Descriptions<a class="headerlink" href="#external-item-descriptions" title="Permanent link">⚓︎</a></h2>
+<p>The most important mod compatibility with golden items is describing their effects for the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=836319872">External Item Descriptions</a> mod. They should always be additional lines starting with <code>{{GoldenItem}} {{ColorGold}}"</code>. As this is a conditional description, you should use add EID's <code>EID:addDescriptionModifier</code> and check the provided description object against <a href="#isgoldenpedestal">IsGoldenPedestal</a> to display your custom golden active text. Keep in mind that Epiphany already handles displaying text by default if the item is a passive item, an item with the <code>nogoldenitem</code> tag, or hasn't been added under <a href="#addgoldenactivesynergy">AddGoldenActiveSynergy</a> to indicate it's simply triggered twice.</p>
+<p>More information about generally adding compatibility with EID can be found <a href="https://github.com/wofsauge/External-Item-Descriptions/wiki">here</a>.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 09:22:18 UTC">September 23, 2026</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      BenevolusGoat
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tabs", "navigation.instant", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort.number.min.js"></script>
+      
+        <script src="../../js/customJS.js"></script>
+      
+        <script src="../../js/jquery.mark.min.js"></script>
+      
+    
+  </body>
+</html>

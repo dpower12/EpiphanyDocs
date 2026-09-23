@@ -1,0 +1,1543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../bad_company/">
+      
+      
+        <link rel="next" href="../golden_items/">
+      
+      
+      <link rel="icon" href="../../img/epiphany_favicon.ico">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Golden beggars - Epiphany API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sprites-and-anm2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Epiphany API Docs" class="md-header__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Epiphany API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Golden beggars
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../globals/" class="md-tabs__link">
+          
+  
+  Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../adding_a_character/" class="md-tabs__link">
+          
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Epiphany API Docs" class="md-nav__button md-logo" aria-label="Epiphany API Docs" data-md-component="logo">
+      
+  <img src="../../img/epiphany_favicon.ico" alt="logo">
+
+    </a>
+    Epiphany API Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mod Global
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Enums
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Enums
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.BagGFXPriority/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagGFXPriority
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.BagSynergyFlags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSynergyFlags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.CardGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CardGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.HeartGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HeartGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.API.SlotGroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlotGroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.CrimsonWispMaturity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispMaturity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.CrimsonWispType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CrimsonWispType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.ExtraCallbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtraCallbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enums/Epiphany.RoomClearType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RoomClearType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagMetaData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagMetaData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagsInfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagsInfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BagSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BagSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/BurstParamsConfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BurstParamsConfig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ImpactBurstParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ImpactBurstParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/PlayerSwingParams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PlayerSwingParams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/SwingingBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SwingingBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/ThrownBagData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ThrownBagData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding_a_character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding a Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bad_company/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bad Company
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Golden beggars
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Golden beggars
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sprites-and-anm2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprites and ANM2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entities2xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      entities2.xml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itempoolsxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      itempools.xml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lua-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lua code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lua code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#golden-beggar-drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Golden beggar drops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../golden_items/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Golden items
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_pools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item pools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu_music/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Menu music
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minor_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minor compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remembrance_familiars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remembrance familiars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample_bombs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample bombs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../throwing_bag_synergies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Throwing Bag
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../true_love/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    True Love
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turnover_shops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Turnover shops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sprites-and-anm2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprites and ANM2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entities2xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      entities2.xml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itempoolsxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      itempools.xml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lua-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lua code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lua code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#golden-beggar-drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Golden beggar drops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Golden beggars</h1>
+
+<p>When <a href="https://tboiepiphany.wiki.gg/wiki/Tarnished_Keeper">Tarnished Keeper</a> touches a beggar, due to his midas curse, the beggar is instantly turned to gold. This unique interaction comes with mod compatibility, where any other mods with their own beggars can add compatibility with feature to create their own "Midas Cursed", or "Golden" version of their beggar.</p>
+<details class="- info">
+<summary>Existing mod support</summary>
+<p>Epiphany already supports a large number of mods that add their own beggars. This currently includes:</p>
+<ul>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2722017893">Andromeda</a> (Wisp Wizard)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3716302651">Arachna</a> (Spider Beggar)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3778123093">Fiend Folio</a> (Evil Beggar, Zodiac Beggar)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1925867065">Ipecac Community Mod</a> (Nerd Beggar)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2809303353">The Punished</a> (Red Beggar)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2627014611">Repentance Plus</a> (Stargazer)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3754876229">Sheriff</a> (Sheriff)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2818356312">Tainted Treasure Rooms</a> (Tainted Beggar)</li>
+</ul>
+</details>
+<h2 id="sprites-and-anm2">Sprites and ANM2<a class="headerlink" href="#sprites-and-anm2" title="Permanent link">⚓︎</a></h2>
+<p>All golden beggars share a similar spritesheet and anm2 file. When creating a version of a golden beggar for your own sprites, you should copy from Epiphany's own files. Simply replace all assets of the beggar with your own beggar, but some may require further customization which you are free to do as such. As long as the anm2 has a non-looping Appear and Idle animation, it can function without issue.</p>
+<ul>
+<li>The anm2 is located in resources/gfx/017.201_beggar.anm2.</li>
+<li>Its spritesheet is located in resources/gfx/misc/, named "gold_beggar.png" and the like.</li>
+</ul>
+<p><img alt="Spritesheet of a regular golden beggar at x2 scale" src="../../assets/midas_beggars/gold_beggar.png" />
+<img alt="Appear animation of a golden beggar" src="../../assets/midas_beggars/MidasBeggar.gif" /></p>
+<h2 id="entities2xml">entities2.xml<a class="headerlink" href="#entities2xml" title="Permanent link">⚓︎</a></h2>
+<p>Golden beggars are internally shopkeeper variants. You can copy the entities2.xml entry below and replace the name, anm2, and variant appropriately:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;entity</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Midas Cursed Beggar&quot;</span>
+<span class="w">    </span><span class="na">id=</span><span class="s">&quot;17&quot;</span><span class="w"> </span><span class="na">variant=</span><span class="s">&quot;201&quot;</span><span class="w"> </span><span class="na">friction=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">baseHP=</span><span class="s">&quot;150&quot;</span><span class="w"> </span><span class="na">boss=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">champion=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">collisionDamage=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">collisionMass=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">collisionRadius=</span><span class="s">&quot;13&quot;</span><span class="w"> </span><span class="na">numGridCollisionPoints=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">shadowSize=</span><span class="s">&quot;14&quot;</span>
+<span class="w">     </span><span class="na">anm2path=</span><span class="s">&quot;017.201_beggar.anm2&quot;</span><span class="w"> </span><span class="na">bestiary=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">bestiaryOverlay=</span><span class="s">&quot;Head&quot;</span><span class="w"> </span><span class="na">shutdoors=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;gibs</span><span class="w"> </span><span class="na">amount=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">blood=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">bone=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">eye=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">gut=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">large=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">poop=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="itempoolsxml">itempools.xml<a class="headerlink" href="#itempoolsxml" title="Permanent link">⚓︎</a></h2>
+<p>When a golden beggar is destroyed, it has a chance to drop an item from its item pool. As of Wave 8, the golden beggars require an actual item pool instead of a simple list of collectibles. If not already, you will need to define your beggar's item drops in a custom made item pool in the itempools.xml file. You can create one just by using a custom name and defining one exactly as you would vanilla item pools.</p>
+<h2 id="lua-code">Lua code<a class="headerlink" href="#lua-code" title="Permanent link">⚓︎</a></h2>
+<p>With the prerequisites met, you can now start adding your beggar to the list of beggars Epiphany recognizes. The function is as follows:</p>
+<p><code>Epiphany.API:AddMidasCursedBeggar(variant: integer, variantGold: integer, itemPool: ItemPoolType | fun(Epiphany, RNG): CollectibleType, drops: table)</code></p>
+<details class="note" open="open">
+<summary>Object groups</summary>
+<p>While you're adding your golden beggar, if not already, define your regular beggar under Epiphany's beggar groups. You can learn more about it <a href="../object_groups/">here</a>.</p>
+</details>
+<ul>
+<li><code>variant</code>: The entity variant of the regular, non-cursed beggar.</li>
+<li><code>variantGold</code>: The entity variant of the golden beggar.</li>
+<li><code>itemPool</code>: The ID of the item pool that this beggar uses. Fetch custom ones through <code>Isaac.GetPoolIdByName</code>. Optionally can also be a function, which will pass the Epiphany global and an <a href="https://repentogon.com/RNG.html">RNG</a> object. Return a CollectibleType to determine what item should be dropped.</li>
+<li><code>drops</code>: A table of pickups that the golden beggar can spawn if it does not drop a collectible.</li>
+</ul>
+<h3 id="golden-beggar-drops">Golden beggar drops<a class="headerlink" href="#golden-beggar-drops" title="Permanent link">⚓︎</a></h3>
+<p>If a golden beggar does not drop its collectible, it may instead drop from a unique pool of pickups. These are not typical beggar drops that they would spawn when destroyed normally, instead uniquely catered to each individual beggar. Inside your <code>drops</code> table will be more tables, each table being a different type of pickup that can possibly drop from the beggar. Below is a list of variables that each of these tables must contain:</p>
+<p>|Variable Name|Possible Values|Description|
+|Amount|integer|The minimum amount of the pickup that can drop.|
+|BonusAmount|integer|How many additional instances of the pickup that can drop. Each point into BonusAmount gives a 50% chance to add an additional instance of the pickup to drop.|
+|Type|EntityType|Optional. Chance the type of entity that is spawned. Default: <code>EntityType.ENTITY_PICKUP</code>|
+|Variant|integer|Pickup variant|
+|Subtype|integer, function|Pickup subtype. As a function, it passes an <a href="https://repentogon.com/RNG.html">RNG</a> object. Return what the subtype of the pickup should be.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">⚓︎</a></h3>
+<p>Below is a final example of what adding a midas cursed beggar would look like, using the regular beggar and its drops as a base.</p>
+<p>```Lua
+local GOLDEN_BEGGAR = Isaac.GetEntityVariantByName("Midas Cursed Beggar")</p>
+<p>local function getTrinket(rng)</p>
+<p>end</p>
+<p>Epiphany.API:AddMidasCursedBeggar(SlotVariant.BEGGAR, GOLDEN_BEGGAR, ItemPoolType.POOL_BEGGAR,
+{
+    { Amount = 1, BonusAmount = 2, Variant = PickupVariant.PICKUP_TAROTCARD, SubType = 0 },
+    { Amount = 1, BonusAmount = 0, Variant = PickupVariant.PICKUP_TRINKET,   SubType = Epiphany.PickupGetter.GetTrinket }, --An internal function from Epiphany. Returns a random TrinketType.
+    { Amount = 1, BonusAmount = 2, Variant = PickupVariant.PICKUP_KEY,       SubType = 0 },
+    { Amount = 1, BonusAmount = 2, Variant = PickupVariant.PICKUP_BOMB,      SubType = 0 },
+    { Amount = 1, BonusAmount = 4, Variant = PickupVariant.PICKUP_COIN,      SubType = 0 },
+    { Amount = 1, BonusAmount = 2, Variant = PickupVariant.PICKUP_HEART,     SubType = 0 },
+})</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 09:22:18 UTC">September 23, 2026</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      BenevolusGoat
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tabs", "navigation.instant", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort.number.min.js"></script>
+      
+        <script src="../../js/customJS.js"></script>
+      
+        <script src="../../js/jquery.mark.min.js"></script>
+      
+    
+  </body>
+</html>

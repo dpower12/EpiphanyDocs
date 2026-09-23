@@ -11,12 +11,24 @@ When sealing chests and repairing slot machines, it also looks for pedestals spa
 
 ## Midas Curse
 
-[Tarnished Keeper](https://tboiepiphany.wiki.gg/wiki/Tarnished_Keeper) cannot interact with a majority of pickups in the game unless they cost money to obtain, as they will turn into coins otherwise. This is not desireable for some pickups, as it may be essential that the player be allowed to pick them up. You can add to the following table to blacklist a specific variant and/or subtype from being converted to coins. Note that this may be changed in the future to use a custom entity tag instead:
+[Tarnished Keeper](https://tboiepiphany.wiki.gg/wiki/Tarnished_Keeper) cannot interact with a majority of pickups in the game unless they cost money to obtain, as they will turn into coins otherwise. This is not desireable for some pickups, as it may be essential that the player be allowed to pick them up. You can add to the following table to blacklist a specific variant and/or subtype from being converted to coins:
 
 ```Lua
-Epiphany.Character.KEEPER.DisallowedPickupVariants[var: PickupVariant] = true
---OR
-Epiphany.Character.KEEPER.DisallowedPickupVariants[var: PickupVariant][subtype: integer] = true
+Epiphany.API:AddPickupToMidasCurseBlacklist(variant: integer, subtype?: integer)
+```
+
+Additionally, if your pickup is fine to be turned into coins but should potentially pay out with more or less coins, you can assign a coin value to your pickup.
+
+You may either use a single variant and a function that returns the desired coin value:
+
+```Lua
+Epiphany.API:AddMidasCursePickupCoinValue(variant: integer, value: fun(pickup: EntityPickup))
+```
+
+Or specify by variant and subtype:
+
+```Lua
+Epiphany.API:AddMidasCursePickupCoinValue(variant: integer, subtype: integer, value: integer)
 ```
 
 ## Debug
@@ -29,11 +41,7 @@ Epiphany.Item.DEBUG.COMPATIBILITY_TABLE[protectedItem: CollectibleType] = second
 
 ## Bad Company
 
-[Bad Company](https://tboiepiphany.wiki.gg/wiki/Bad_Company) allows shopkeepers to be paid for and turned into friendly Greeds or Super Greeds. As Epiphany has their own unique shopkeeper entities that are not meant to be presented as one, a blacklist exists to stop any entity with type `EntityType.ENTITY_SHOPKEEPER`, or `17`, them from being hireable and turned into a friendly Greed. At the moment, you can add to the following table, but this may be changed in the future to use a custom entity tag instead:
-
-```Lua
-Epiphany.Item.BAD_COMPANY.KEEPER_VARIANT_BLACKLIST[shopkeeperVariant: integer] = true
-```
+Shopkeeper variants can be blacklisted from being turned into hireable friendly Greeds. Information on blacklisting it can be found [here](bad_company.md#addshopkeepertobadcompanyblacklist).
 
 ## Heart values
 

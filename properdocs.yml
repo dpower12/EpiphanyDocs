@@ -35,6 +35,7 @@ nav:
     - "Remembrance familiars": guides/remembrance_familiars.md
     - "Sample bombs": guides/sample_bombs.md
     - "Throwing Bag": guides/throwing_bag_synergies.md
+    - "True Love": guides/true_love.md
     - "Turnover shops": guides/turnover_shops.md
 theme:
   name: material

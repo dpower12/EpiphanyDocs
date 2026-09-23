@@ -4,12 +4,12 @@ Remembrance is an item that allows temporary familiars such as Minisaacs, Blue F
 
 Adding your familiar as one that can spawn a Remembrance wisp is all done through one function: `Epiphany.API:AddRemembranceFamiliar(identifier: string, remembranceTable: table)`.
 
-- `identifier` must be a string unique to the familiar.
-- `remembranceTable` accepts a table that can contain the following variables:
+- `identifier`: Must be a string unique to the familiar.
+- `remembranceTable`: Accepts a table that can contain the following variables:
 
 |Variable Name|Possible Values|Description|
 |:--|:--|:--|
-|Variant|FamiliarVariant|**Required**. The variant ID of the familiar to drop a Remembrance wisp on death.|
+|Variant|FamiliarVariant|The variant ID of the familiar to drop a Remembrance wisp on death.|
 |Subtype|integer|Optional. The subtype ID of the familiar to drop a Remembrance wisp on death.|
 |WispAnm2|string|Optional. The anm2 of the wisp. By default, uses `gfx/003.905.051_crimson_wisp_remembrance.anm2`. If you're customizing the anm2, copy this anm2 and build off of it.|
 |WispSpawnChecker|function|Optional. Passes the familiar being killed. Can be used to control whether or not the familiar should drop a wisp. Return `true` if it should, `false/nil` otherwise, where it will continue with its code as normal.|

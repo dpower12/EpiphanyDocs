@@ -9,8 +9,8 @@
 
 Adding your custom heart to True Love can be done through the function `Epiphany.API:AddTrueLoveHeart(identifier: string, heartTable: table)`.
 
-- `identifier`: is a string that uniquely identifies your heart type
-- `heartTable`: A table that can contain the following variables:
+- `identifier`: A string that uniquely identifies your heart type.
+- `heartTable`: Accepts a table that can contain the following variables:
 
 |Variable Name|Possible Values|Description|
 |:--|:--|:--|

@@ -96,3 +96,11 @@ When [Blighted Dice](https://tboiepiphany.wiki.gg/wiki/Blighted_Dice) is used an
 ```Lua
 Epiphany.Item.BLIGHTED_DICE.PLAYER_TYPE_COLLISION_BLACKLIST[playerType: PlayerType] = true
 ```
+
+## Sample Bombs unlock
+
+Sample Bombs are a miscellaneous unlock that is unlocked by collecting 3 bomb synergy items in a single run. If you mod adds a bomb synergy item, you should go ahead and add your bomb item to the list! You can find an example below. More information on adding your own Sample Bombs can be found [here](sample_bombs.md).
+
+```Lua
+Epiphany.BOMB_MODIFIERS[COLLECTIBLE_TYPE_HERE] = true
+```

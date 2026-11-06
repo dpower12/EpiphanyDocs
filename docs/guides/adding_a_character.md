@@ -9,6 +9,7 @@ In addition to the work-in-progress set of tarnished characters for the vanilla 
 	- Use `hideachievement` instead of `hidden` in your `players.xml` for your tarnished, setting it equal to your new HIDE_MENU achievement.
 	- New color palette for tarnished characters, and a normal "grey" version of the portrait. The grey one is assigned to your content folder's characterportraits.xml, the red to your tarnished menu anm2.
 	- Add `taintedID` to your table in `Epiphany.API.AddCharacter` and set it equal to the tainted character ID that your character should be sorted under.
+	- Use [ModCallbacks.MC_POST_MODS_LOADED](https://repentogon.com/enums/ModCallbacks.html#mc_post_mods_loaded) for adding your tarnished! Without it your character will not be shown on the menu until you start a run and exit back to the menu.
 
 	**Optional:**
 
